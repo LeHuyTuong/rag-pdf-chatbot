@@ -1,0 +1,282 @@
+[
+  {
+    "id": "q001",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Ai lãnh đạo chiến thắng Bạch Đằng năm 938?",
+    "expected_keywords": [
+      "Ngô Quyền"
+    ],
+    "required_source_keywords": [
+      "Bạch Đằng",
+      "938",
+      "Ngô Quyền"
+    ],
+    "should_refuse": false,
+    "category": "answerable",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q002",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Chiến thắng Bạch Đằng năm 938 diễn ra trên dòng sông nào?",
+    "expected_keywords": [
+      "Bạch Đằng"
+    ],
+    "required_source_keywords": [
+      "sông Bạch Đằng",
+      "938"
+    ],
+    "should_refuse": false,
+    "category": "answerable",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q003",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Năm nào Ngô Quyền giành chiến thắng Bạch Đằng?",
+    "expected_keywords": [
+      "938"
+    ],
+    "required_source_keywords": [
+      "Ngô Quyền",
+      "938"
+    ],
+    "should_refuse": false,
+    "category": "answerable",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q004",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Chiến thắng Bạch Đằng 938 chấm dứt thời kỳ nào?",
+    "expected_keywords": [
+      "Bắc thuộc"
+    ],
+    "required_source_keywords": [
+      "Bắc thuộc",
+      "độc lập"
+    ],
+    "should_refuse": false,
+    "category": "answerable",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q005",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Ai chỉ huy chiến thắng Bạch Đằng năm 1288?",
+    "expected_keywords": [
+      "Trần Hưng Đạo"
+    ],
+    "required_source_keywords": [
+      "Bạch Đằng",
+      "1288",
+      "Trần Hưng Đạo"
+    ],
+    "should_refuse": false,
+    "category": "answerable",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q006",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Nhà Trần kháng chiến chống quân nào trong thế kỷ XIII?",
+    "expected_keywords": [
+      "Nguyên Mông"
+    ],
+    "required_source_keywords": [
+      "Nhà Trần",
+      "Nguyên Mông"
+    ],
+    "should_refuse": false,
+    "category": "answerable",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q007",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Hội nghị nào tiêu biểu trong kháng chiến thời Trần?",
+    "expected_keywords": [
+      "Diên Hồng"
+    ],
+    "required_source_keywords": [
+      "Hội nghị Diên Hồng"
+    ],
+    "should_refuse": false,
+    "category": "answerable",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q008",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Chiến dịch Điện Biên Phủ kết thúc năm nào?",
+    "expected_keywords": [
+      "1954"
+    ],
+    "required_source_keywords": [
+      "Điện Biên Phủ",
+      "1954"
+    ],
+    "should_refuse": false,
+    "category": "answerable",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q009",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Cách mạng tháng Tám diễn ra năm nào?",
+    "expected_keywords": [
+      "1945"
+    ],
+    "required_source_keywords": [
+      "Cách mạng tháng Tám",
+      "1945"
+    ],
+    "should_refuse": false,
+    "category": "answerable",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q010",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Nguyên nhân thắng lợi của Cách mạng tháng Tám là gì?",
+    "expected_keywords": [
+      "lãnh đạo",
+      "đoàn kết"
+    ],
+    "required_source_keywords": [
+      "lãnh đạo",
+      "đoàn kết"
+    ],
+    "should_refuse": false,
+    "category": "answerable",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q011",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Ai lãnh đạo Bạch Đằng năm 1288, có phải Ngô Quyền không?",
+    "expected_keywords": [
+      "Trần Hưng Đạo"
+    ],
+    "required_source_keywords": [
+      "1288",
+      "Trần Hưng Đạo"
+    ],
+    "should_refuse": false,
+    "category": "near_miss",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q012",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Bạch Đằng 938 và Bạch Đằng 1288 khác nhau ở người lãnh đạo nào?",
+    "expected_keywords": [
+      "Ngô Quyền",
+      "Trần Hưng Đạo"
+    ],
+    "required_source_keywords": [
+      "938",
+      "1288",
+      "Ngô Quyền",
+      "Trần Hưng Đạo"
+    ],
+    "should_refuse": false,
+    "category": "near_miss",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q013",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Điện Biên Phủ có phải sự kiện năm 1945 không?",
+    "expected_keywords": [
+      "1954"
+    ],
+    "required_source_keywords": [
+      "Điện Biên Phủ",
+      "1954"
+    ],
+    "should_refuse": false,
+    "category": "near_miss",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q014",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Cách mạng tháng Tám có phải diễn ra năm 1954 không?",
+    "expected_keywords": [
+      "1945"
+    ],
+    "required_source_keywords": [
+      "Cách mạng tháng Tám",
+      "1945"
+    ],
+    "should_refuse": false,
+    "category": "near_miss",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q015",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Nhà Trần chống quân Nam Hán hay Nguyên Mông?",
+    "expected_keywords": [
+      "Nguyên Mông"
+    ],
+    "required_source_keywords": [
+      "Nhà Trần",
+      "Nguyên Mông"
+    ],
+    "should_refuse": false,
+    "category": "near_miss",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q016",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Tài liệu này có nói về blockchain không?",
+    "expected_keywords": [],
+    "required_source_keywords": [],
+    "should_refuse": true,
+    "category": "refusal",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q017",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Tài liệu có nêu thuật toán học sâu Transformer không?",
+    "expected_keywords": [],
+    "required_source_keywords": [],
+    "should_refuse": true,
+    "category": "refusal",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q018",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Ai là người sáng lập công ty Apple theo tài liệu?",
+    "expected_keywords": [],
+    "required_source_keywords": [],
+    "should_refuse": true,
+    "category": "refusal",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q019",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Tài liệu có nói về World Cup 2022 không?",
+    "expected_keywords": [],
+    "required_source_keywords": [],
+    "should_refuse": true,
+    "category": "refusal",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q020",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "Tài liệu có hướng dẫn nấu phở không?",
+    "expected_keywords": [],
+    "required_source_keywords": [],
+    "should_refuse": true,
+    "category": "refusal",
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  }
+]

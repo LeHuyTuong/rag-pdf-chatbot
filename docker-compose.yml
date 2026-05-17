@@ -1,0 +1,83 @@
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-rag}
+      MYSQL_USER: ${DB_USERNAME:-raguser}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-ragpass}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootpass}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u$${MYSQL_USER} -p$${MYSQL_PASSWORD} --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  qdrant:
+    image: qdrant/qdrant:v1.12.5
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  rag-api:
+    build: ./rag-api
+    env_file: .env
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      QDRANT_URL: http://qdrant:6333
+      STORAGE_PATH: /app/storage/uploads
+      DEBUG_REPORT_PATH: /app/storage/debug
+      QDRANT_LOCAL_PATH: /app/storage/qdrant-local
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./storage:/app/storage
+    depends_on:
+      mysql:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+
+  backend-spring:
+    build: ./backend-spring
+    env_file: .env
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      RAG_API_URL: http://rag-api:8000
+      STORAGE_PATH: /app/storage/uploads
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./storage:/app/storage
+    depends_on:
+      mysql:
+        condition: service_healthy
+      rag-api:
+        condition: service_started
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend-spring
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8088:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - frontend
+      - backend-spring
+
+volumes:
+  mysql_data:
+  qdrant_data:

@@ -1,0 +1,34 @@
+# Secrets
+.env
+**/.env
+*.env.local
+**/*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+
+# Java / Spring
+backend-spring/target/
+
+# Runtime data
+/storage/
+/logs/
+**/logs/
+*.log
+
+# Local tools
+.tools/
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
