@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "capture:screenshots": "node scripts/capture-screenshots.js"
+  },
+  "devDependencies": {
+    "playwright": "1.60.0"
+  }
+}
