@@ -30,9 +30,14 @@ class RagPipeline:
         selected_chunks = [result.chunk for result in selected]
 
         if not selected_chunks:
-            answer = REFUSAL
-            confidence = 0.25
-            warning = 'No chunk met MIN_SCORE; refusing to answer to avoid hallucination.'
+            if not retrieved:
+                answer = 'Tài liệu hiện tại chưa có đoạn nội dung nào có thể dùng để trả lời. Vui lòng kiểm tra lại quá trình ingest/OCR của tài liệu.'
+                confidence = 0.0
+                warning = 'No chunks were retrieved. The document may have zero chunks, scan-only content, or ingestion failed.'
+            else:
+                answer = REFUSAL
+                confidence = 0.25
+                warning = 'No chunk met MIN_SCORE; refusing to answer to avoid hallucination.'
         else:
             answer = LlmService(self.settings).answer(request.question, selected_chunks)
             confidence = round(sum(result.final_score for result in selected) / len(selected), 4)
@@ -48,6 +53,7 @@ class RagPipeline:
                 page_end=result.chunk.page_end,
                 score=result.final_score,
                 support_level='strong' if result.keyword_score > 0 else 'medium',
+                preview=result.chunk.content[:320],
             )
             for result in selected
         ]

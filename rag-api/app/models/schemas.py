@@ -60,6 +60,7 @@ class Source(BaseModel):
     page_end: int
     score: float
     support_level: str
+    preview: str | None = None
 
 
 class RagAskResponse(BaseModel):
