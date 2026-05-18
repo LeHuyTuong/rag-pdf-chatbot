@@ -13,6 +13,13 @@ class EmbeddingService:
         self._model = None
 
     def embed(self, texts: list[str]) -> list[list[float]]:
+        """
+        Sinh embedding cho danh sách `texts`.
+
+        - Theo cấu hình `fast_test_mode` có thể sử dụng hàm hash thay thế để test nhanh.
+        - Khi dùng sentence-transformers, embeddings được normalize (unit vectors).
+        - Kiểm tra chiều embedding khớp `EMBEDDING_DIMENSION` và ném lỗi nếu không khớp.
+        """
         if self.settings.fast_test_mode:
             vectors = [self._hash_embedding(t) for t in texts]
         else:

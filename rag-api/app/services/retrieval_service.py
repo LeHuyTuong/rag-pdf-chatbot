@@ -9,11 +9,27 @@ logger = get_logger(__name__)
 
 
 class RetrievalService:
+    """
+    Service thực hiện retrieval từng câu hỏi.
+
+    Score calculation:
+    - `vector_score`: điểm tương đồng ngữ nghĩa từ Qdrant (cosine similarity).
+    - `keyword_score`: tỷ lệ từ khóa câu hỏi xuất hiện trong chunk (0..1).
+    - `final_score = 0.75 * vector_score + 0.25 * keyword_score`.
+
+    Một chunk được chọn làm context nếu `final_score >= MIN_SCORE` và chưa vượt `max_context_chunks`.
+    """
     def __init__(self, settings: Settings, qdrant: QdrantService):
         self.settings = settings
         self.qdrant = qdrant
 
     def retrieve(self, user_id: str, document_id: str, question: str) -> list[RetrievedChunk]:
+        """
+        Truy xuất top_k candidate từ Qdrant và tính điểm, sau đó quyết định chọn chunk cho context.
+
+        Trả về list[RetrievedChunk] chứa vector_score (từ Qdrant), keyword_score (từ _keyword_score),
+        final_score, selected_for_context (bool) và reason giải thích.
+        """
         hits = self.qdrant.search(user_id, document_id, question, self.settings.top_k)
         if not hits:
             hits = self._mysql_fallback_search(user_id, document_id, question)
@@ -75,6 +91,11 @@ class RetrievalService:
         return keywords
 
     def _keyword_score(self, keywords: list[str], content: str) -> float:
+        """
+        Tính `keyword_score` là tỷ lệ từ khóa xuất hiện trong content (normalized).
+
+        Trả về float trong [0,1]. Có một vài boost heuristic nhỏ cho từ đặc thù.
+        """
         if not keywords:
             return 0.0
         lowered = content.lower()

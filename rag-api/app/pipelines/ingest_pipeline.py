@@ -1,3 +1,17 @@
+"""
+Pipeline xử lý ingest tài liệu PDF vào hệ thống RAG.
+
+Luồng chính:
+1. Gọi `PdfParser.parse` để đọc và trích xuất văn bản từng trang.
+2. Gọi `Chunker.chunk` để tách văn bản thành các chunk theo cấu hình CHUNK_SIZE/CHUNK_OVERLAP.
+3. Gọi `QdrantService.upsert_chunks` để sinh embedding và upsert vector vào Qdrant.
+4. Lưu metadata/chunks vào MySQL (nếu có) và tạo báo cáo (chunk report).
+
+Ghi chú quan trọng:
+- Đoạn code này chỉ orchestration; không thực hiện background job (TODO: cân nhắc chuyển ingest lớn sang job bất đồng bộ).
+- Nếu chunker trả về rỗng hoặc parser báo PDF không có text layer, pipeline sẽ trả về IngestResponse báo lỗi/warning.
+"""
+
 from typing import Any
 
 from app.core.config import Settings
@@ -14,12 +28,26 @@ logger = get_logger(__name__)
 
 
 class IngestPipeline:
+    """
+    Lớp điều phối quá trình ingest cho một PDF đơn lẻ.
+
+    Mục đích: đảm bảo chuỗi hành động parse -> chunk -> embed -> upsert -> persist và ghi report.
+    """
     def __init__(self, settings: Settings):
         self.settings = settings
         self.mysql = MySqlService(settings)
         self.reports = ChunkReportService(settings)
 
     def ingest(self, request: IngestRequest) -> IngestResponse:
+        """
+        Thực hiện ingest cho `request` mô tả file đã upload.
+
+        Trả về `IngestResponse` với các trường: status, total_pages, total_chunks, chunk_report_path, ...
+
+        Quy tắc lựa chọn/edge-cases:
+        - Nếu parser phát hiện PDF là scan (không có text layer) thì `warning` sẽ được truyền trong report.
+        - Nếu không có chunk hợp lệ, phương thức trả về status='failed' và kèm message chi tiết.
+        """
         parser = PdfParser()
         pages = []
         chunks = []

@@ -10,9 +10,24 @@ logger = get_logger(__name__)
 
 class Chunker:
     def __init__(self, settings: Settings):
+        """
+        Chunker tách văn bản trang thành các chunk theo chiến lược window trên từ (word window).
+
+        Mỗi chunk lưu metadata: chunk_id, document_id, user_id, chunk_index, page_start/page_end,
+        char_start/char_end, token_count, content, chunk_reason, file_name.
+
+        Quy ước: chunk_size và chunk_overlap lấy từ `settings` (CHUNK_SIZE, CHUNK_OVERLAP).
+        """
         self.settings = settings
 
     def chunk(self, pages: list[PageText], document_id: str, user_id: str, file_name: str) -> list[Chunk]:
+        """
+        Tạo danh sách `Chunk` từ danh sách `PageText`.
+
+        - Chia page.text thành danh sách từ, chạy sliding window size=`chunk_size` với overlap=`chunk_overlap`.
+        - Mỗi chunk được đánh `chunk_index` theo thứ tự tạo.
+        - Không cắt qua nhiều trang: mỗi chunk chỉ từ một trang (page-aware).
+        """
         chunks: list[Chunk] = []
         chunk_size = max(1, self.settings.chunk_size)
         overlap = min(max(0, self.settings.chunk_overlap), max(0, chunk_size - 1))
@@ -58,6 +73,10 @@ class Chunker:
         word_start: int,
         word_end: int,
     ) -> Chunk:
+        """
+        Tạo một `Chunk` model với các metadata cần thiết.
+        `char_start` được tính dựa trên vị trí content trong `normalized_page_text` và offset page.char_start.
+        """
         token_count = len(content.split())
         reason = (
             f'Created from page {page.page_number}, words {word_start + 1}-{word_end}, '
@@ -81,6 +100,11 @@ class Chunker:
         )
 
     def _normalize(self, text: str) -> str:
+        """
+        Chuẩn hóa text trang để chunker hoạt động ổn định:
+        - Thay ký tự null, gộp whitespace ngang, xóa nhiều dòng trắng liên tiếp.
+        - Trả về string đã strip.
+        """
         text = text.replace('\x00', ' ')
         text = re.sub(r'[ \t\r\f\v]+', ' ', text)
         text = re.sub(r'\n\s*\n+', '\n', text)

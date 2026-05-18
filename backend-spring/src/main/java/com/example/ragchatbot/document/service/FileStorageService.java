@@ -14,6 +14,16 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Service
+/**
+ * Service lưu trữ file upload trên đĩa.
+ *
+ * Chức năng chính:
+ * - Validate file PDF (không rỗng, kết thúc bằng .pdf).
+ * - Sanitize và chuẩn hóa tên file (xử lý ký tự điều khiển, đường dẫn, tiếng Việt) để tránh path traversal.
+ * - Giới hạn độ dài tên file lưu trữ.
+ *
+ * Edge-cases được xử lý: path traversal, file không tồn tại sau ghi, file rỗng sau ghi.
+ */
 public class FileStorageService {
 	private final Path storage;
 

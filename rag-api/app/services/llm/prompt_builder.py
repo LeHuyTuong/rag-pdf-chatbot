@@ -8,6 +8,11 @@ class PromptBuilder:
         self.template_path = Path(__file__).resolve().parents[2].joinpath('prompts/rag_prompt.txt')
 
     def build(self, question: str, chunks: list[Chunk]) -> str:
+        """
+        Xây dựng prompt cho LLM từ `question` và danh sách `chunks`.
+
+        Format trả về phù hợp với template `prompts/rag_prompt.txt`.
+        """
         template = self.template_path.read_text(encoding='utf-8')
         context = '\n\n'.join(
             f'[{index + 1}] file={chunk.file_name}, page={chunk.page_start}-{chunk.page_end}, chunk_id={chunk.chunk_id}\n{chunk.content}'

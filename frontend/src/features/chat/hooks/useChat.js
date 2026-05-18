@@ -2,6 +2,11 @@ import { useState } from 'react';
 import { askQuestion, createChatSession, getChatReport } from '../api/chatApi';
 import { getErrorMessage } from '../../../shared/utils/errors';
 
+/**
+ * Hook chính cho giao diện chat:
+ * - Quản lý sessionId, messages, trạng thái sending/error.
+ * - Tạo session khi cần và gửi câu hỏi theo flow backend.
+ */
 export default function useChat(documentId) {
   const [sessionId, setSessionId] = useState(null);
   const [messages, setMessages] = useState([]);

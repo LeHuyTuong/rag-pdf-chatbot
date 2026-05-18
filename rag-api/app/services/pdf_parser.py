@@ -12,10 +12,27 @@ logger = get_logger(__name__)
 
 
 class PdfParser:
+    """
+    Parser PDF với fallback giữa pypdf và pymupdf.
+
+    Tính năng:
+    - Thử `pypdf` trước, nếu kết quả rỗng hoặc lỗi sẽ thử `pymupdf` (nếu cài).
+    - Ghi báo cáo chi tiết về số trang, parser đã dùng, các lỗi trang cụ thể, và cảnh báo nếu PDF chỉ là ảnh/scan.
+
+    Edge-cases:
+    - File không tồn tại, không phải PDF, hoặc bị mã hóa sẽ ném lỗi phù hợp.
+    - Nếu cả hai parser đều fail sẽ ném ValueError với chi tiết parser_errors.
+    """
     def __init__(self) -> None:
         self.last_report: dict[str, Any] = {}
 
     def parse(self, file_path: str) -> tuple[list[PageText], str | None]:
+        """
+        Đọc file PDF và trả về tuple (pages, warning).
+
+        Trả về `pages` là list[PageText] (page_number, text, char_start/char_end) và
+        `warning` là chuỗi nếu file có vấn đề (ví dụ: scan-only cần OCR).
+        """
         path = Path(file_path).expanduser()
         self.last_report = self._base_report(path)
         self._log('parse_start', self.last_report)
@@ -153,6 +170,11 @@ class PdfParser:
             return pages
 
     def clean(self, text: str) -> str:
+        """
+        Chuẩn hóa dòng văn bản trên một trang PDF:
+        - Xóa ký tự null, squash whitespace ngang, xóa nhiều dòng trắng liên tiếp.
+        - Trả về chuỗi đã strip.
+        """
         lines = [' '.join(line.split()) for line in text.splitlines()]
         cleaned = []
         previous_blank = False

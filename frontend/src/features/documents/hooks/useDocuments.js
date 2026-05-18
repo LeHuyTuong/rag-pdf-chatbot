@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react';
 import { getDocuments } from '../api/documentApi';
 import { getErrorMessage } from '../../../shared/utils/errors';
 
+/**
+ * Hook tải danh sách documents của user hiện tại.
+ * Trả về: { documents, error, loading, reload }
+ */
 export default function useDocuments() {
   const [documents, setDocuments] = useState([]);
   const [error, setError] = useState('');

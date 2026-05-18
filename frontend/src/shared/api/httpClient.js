@@ -1,5 +1,13 @@
 import axios from 'axios';
 
+/**
+ * HTTP client chung cho frontend.
+ *
+ * - Thiết lập `baseURL` từ env `VITE_API_BASE_URL` (fallback localhost).
+ * - Thêm Authorization header nếu có token.
+ * - Interceptor response: nếu 401/403 thì redirect về /login.
+ */
+
 const httpClient = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080',
 });

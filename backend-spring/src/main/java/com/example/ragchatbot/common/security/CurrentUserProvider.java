@@ -7,6 +7,11 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
+/**
+ * Trích xuất user id từ SecurityContext hiện tại.
+ *
+ * Quy ước: Principal được lưu trữ là `UUID` của user; nếu không có authentication hợp lệ thì ném SecurityException.
+ */
 public class CurrentUserProvider {
 	public UUID currentUserId() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

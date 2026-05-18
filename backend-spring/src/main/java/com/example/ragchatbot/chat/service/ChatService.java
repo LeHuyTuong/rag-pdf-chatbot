@@ -21,6 +21,17 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+/**
+ * Service quản lý phiên chat và luồng hỏi-đáp với RAG API.
+ *
+ * Luồng `ask`:
+ * 1. Lưu message của user vào DB.
+ * 2. Gọi `RagChatClient.ask` (gửi question, userId, documentId, sessionId, messageId).
+ * 3. Lưu response của assistant (content, confidence, sources, báo cáo đường dẫn).
+ *
+ * Lưu ý:
+ * - Service giả định RAG trả về cấu trúc hợp lệ; nếu RAG trả null thì assistant message sẽ rỗng và confidence = 0.
+ */
 public class ChatService {
 	private final ChatSessionRepository sessions;
 	private final ChatMessageRepository messages;

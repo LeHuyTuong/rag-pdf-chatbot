@@ -18,6 +18,11 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/documents")
+/**
+ * Controller dành cho thao tác liên quan tới Document.
+ *
+ * Lưu ý: Controller chỉ nhận request và trả response; mọi logic nghiệp vụ nằm trong `DocumentService`.
+ */
 public class DocumentController {
 	private final DocumentService documents;
 

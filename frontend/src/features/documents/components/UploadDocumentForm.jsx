@@ -7,6 +7,18 @@ function formatFileSize(bytes) {
   return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
 }
 
+/**
+ * Component form upload PDF.
+ * Ghi chú:
+ * - Validate MIME type `application/pdf` trên client (không thay thế validate server).
+ * - Kéo thả hoặc click để chọn file; hiển thị preview tên và kích thước.
+ *
+ * Props:
+ * - file: File được chọn
+ * - setFile: setter để cập nhật file
+ * - loading: trạng thái đang upload
+ * - onUpload: hàm gọi khi nhấn upload
+ */
 export default function UploadDocumentForm({ file, setFile, loading, onUpload }) {
   const [dragging, setDragging] = useState(false);
   const fileInputRef = useRef(null);

@@ -1,5 +1,10 @@
 import httpClient from '../../../shared/api/httpClient';
 
+/**
+ * API helper cho chat features.
+ * - createChatSession: tạo session mới cho document.
+ * - askQuestion: gửi câu hỏi đến backend và nhận assistant_message + metadata.
+ */
 export async function createChatSession(payload) {
   const response = await httpClient.post('/api/chat/sessions', payload);
   return response.data;

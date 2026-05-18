@@ -21,6 +21,19 @@ import java.util.Map;
 import java.util.UUID;
 
 @Service
+/**
+ * Service xử lý upload và lifecycle của Document trong backend.
+ *
+ * Luồng nghiệp vụ chính của `upload`:
+ * 1. Lấy user hiện tại và tạo bản ghi Document với trạng thái `processing`.
+ * 2. Gọi `FileStorageService.storePdf` để lưu file lên disk (validate PDF, sanitize tên file).
+ * 3. Gọi `RagIngestClient.ingest` để gửi file sang RAG API và chờ kết quả ingest.
+ * 4. Cập nhật trạng thái Document theo response từ RAG (completed/failed) và lưu thông tin liên quan.
+ *
+ * Ghi chú:
+ * - Nếu RAG trả lỗi/thất bại, Document sẽ được đánh dấu `failed` và message lỗi được lưu.
+ * - Service không trực tiếp parse/chunk/embed; việc đó do RAG API đảm nhận.
+ */
 public class DocumentService {
 	private static final Logger log = LoggerFactory.getLogger(DocumentService.class);
 	private final DocumentRepository documents;

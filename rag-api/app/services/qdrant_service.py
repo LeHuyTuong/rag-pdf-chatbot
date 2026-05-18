@@ -11,6 +11,13 @@ logger = get_logger(__name__)
 
 class QdrantService:
     def __init__(self, settings: Settings, embedding: EmbeddingService):
+        """
+        Wrapper cho QdrantClient với logic tạo collection, upsert vectors và search.
+
+        Lưu ý:
+        - Collection được tạo với `distance=qm.Distance.COSINE` => search trả về cosine score (higher is better).
+        - Payload chứa metadata quan trọng để map lại `Chunk` khi tìm kiếm.
+        """
         self.settings = settings
         self.embedding = embedding
         self.collection = settings.qdrant_collection
@@ -100,6 +107,12 @@ class QdrantService:
         return chunks
 
     def search(self, user_id: str, document_id: str, question: str, top_k: int) -> list[tuple[Chunk, float]]:
+        """
+        Thực hiện tìm kiếm vector trên Qdrant cho `question` đã embed.
+
+        Trả về danh sách (Chunk, score) với `score` là giá trị similarity từ Qdrant (cosine similarity).
+        Payload Qdrant được dùng để khôi phục `Chunk` metadata.
+        """
         if self.client is None:
             logger.warning('QdrantService.search skipped because client is disabled')
             return []

@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { uploadDocument } from '../api/documentApi';
 import { getErrorMessage } from '../../../shared/utils/errors';
 
+/**
+ * Hook hỗ trợ upload document trên client.
+ * - upload(file): validate file, gọi API, trả về document object hoặc null.
+ */
 export default function useUploadDocument() {
   const [document, setDocument] = useState(null);
   const [error, setError] = useState('');

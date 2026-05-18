@@ -15,6 +15,12 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.NoSuchElementException;
 
 @RestControllerAdvice
+/**
+ * Chuẩn hóa ngoại lệ trả về cho frontend.
+ *
+ * Map một số exception sang HTTP status tương ứng và trả `ApiError` có mã lỗi rõ ràng.
+ * Mục đích: tránh lộ stacktrace chi tiết ra client và cung cấp thông điệp người dùng.
+ */
 public class GlobalExceptionHandler {
 	private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 

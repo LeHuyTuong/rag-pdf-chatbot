@@ -1,6 +1,12 @@
 import React from 'react';
 import Modal from '../../../shared/components/Modal';
 
+/**
+ * Hiển thị chunk report (dùng để debug ingest trên UI).
+ * Props:
+ * - report: object báo cáo ingest (đã JSON.stringify trong pre).
+ * - onClose: callback đóng modal.
+ */
 export default function ChunkReportPanel({ report, onClose }) {
   if (!report) return null;
   return (

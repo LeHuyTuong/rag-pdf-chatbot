@@ -7,6 +7,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @Component
+/**
+ * HTTP client gọi endpoint RAG `/rag/ask` để lấy câu trả lời cho một câu hỏi.
+ *
+ * Lưu ý: phương thức `ask` dùng `postForObject` đồng bộ; lỗi HTTP sẽ được ném ở tầng gọi.
+ */
 public class RagChatClient {
 	private final RestTemplate rest;
 	private final String url;
