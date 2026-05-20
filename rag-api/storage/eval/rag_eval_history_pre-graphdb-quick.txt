@@ -1,0 +1,456 @@
+RAG HISTORY EVALUATION REPORT
+Generated at: 2026-05-20T23:57:35
+RAG_API_URL: from-jsonl
+User ID: from-jsonl
+Document ID: from-jsonl
+Total questions: 10
+
+==================================================
+[Q] Bá»™ 10 cĂ¢u test nhanh
+==================================================
+
+[Q01] Äáº¡i há»™i VI nÄƒm 1986 cĂ³ Ă½ nghÄ©a gĂ¬ Ä‘á»‘i vá»›i lá»‹ch sá»­ Viá»‡t Nam?
+
+Expected behavior:
+Q01â€“Q09 nĂªn tráº£ lá»i Ä‘Æ°á»£c dá»±a trĂªn tĂ i liá»‡u 1986â€“2000. Q10 lĂ  cĂ¢u báº«y; náº¿u chÆ°a cĂ³ tĂ i liá»‡u thá»i Äinh, pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t.
+
+Answer:
+Äáº¡i há»™i VI nÄƒm 1986 cĂ³ Ă½ nghÄ©a lĂ  má»™t sá»± kiá»‡n mang tĂ­nh bÆ°á»›c ngoáº·t Ä‘á»‘i vá»›i lá»‹ch sá»­ Viá»‡t Nam, má»Ÿ Ä‘áº§u cho thá»i ká»³ 15 nÄƒm Ä‘áº§u Ä‘á»•i má»›i vá»›i nhá»¯ng ná»™i dung chĂ­nh sau:
+
+- **Thay Ä‘á»•i cÆ¡ cháº¿ phĂ¡t triá»ƒn:** Táº¡o ra bÆ°á»›c Ä‘á»™t phĂ¡ khi chuyá»ƒn tá»« cÆ¡ cháº¿ má»‡nh lá»‡nh, bao cáº¥p sang phĂ¡t triá»ƒn theo cÆ¡ cháº¿ thá»‹ trÆ°á»ng, Ä‘áº·t ná»n mĂ³ng cho sá»± nghiá»‡p Ä‘áº©y máº¡nh cĂ´ng nghiá»‡p hĂ³a, hiá»‡n Ä‘áº¡i hĂ³a Ä‘áº¥t nÆ°á»›c.
+- **Äá»•i má»›i tÆ° duy vĂ  lĂ½ luáº­n:** Äáº¡i há»™i Ä‘Ă£ nhĂ¬n tháº³ng vĂ o sá»± tháº­t Ä‘á»ƒ phĂª phĂ¡n nhá»¯ng sai láº§m, khuyáº¿t Ä‘iá»ƒm do bá»‡nh duy Ă½ chĂ­, chá»§ quan nĂ³ng vá»™i, báº£o thá»§ vĂ  sá»± láº¡c háº­u trong nháº­n thá»©c lĂ½ luáº­n (Ä‘áº·c biá»‡t lĂ  vá» cĂ´ng nghiá»‡p hĂ³a, cáº£i táº¡o XHCN, cÆ¡ cháº¿ quáº£n lĂ½ kinh táº¿...). Tá»« Ä‘Ă³, xĂ¡c Ä‘á»‹nh phÆ°Æ¡ng chĂ¢m Ä‘á»•i má»›i tÆ° duy dá»±a trĂªn chá»§ nghÄ©a MĂ¡c - LĂªnin, tÆ° tÆ°á»Ÿng Há»“ ChĂ­ Minh vĂ  tiáº¿p thu thĂ nh tá»±u khoa há»c, kinh nghiá»‡m cá»§a thá»i Ä‘áº¡i.
+- **Äá» ra Ä‘Æ°á»ng lá»‘i Ä‘á»•i má»›i toĂ n diá»‡n:** Trá»ng tĂ¢m lĂ  Ä‘á»•i má»›i kinh táº¿ nháº±m giáº£i phĂ³ng má»i nÄƒng lá»±c sáº£n xuáº¥t vĂ  khai thĂ¡c tiá»m nÄƒng cá»§a Ä‘áº¥t nÆ°á»›c; thá»«a nháº­n tĂ­nh cháº¥t nhiá»u thĂ nh pháº§n cá»§a ná»n kinh táº¿ vĂ  Ă¡p dá»¥ng cÆ¡ cháº¿ quáº£n lĂ½ kinh táº¿ má»›i.
+- **XĂ¡c Ä‘á»‹nh láº¡i lá»™ trĂ¬nh xĂ¢y dá»±ng CNXH:** Cá»¥ thá»ƒ hĂ³a Ä‘Æ°á»ng lá»‘i xĂ¢y dá»±ng CNXH trong thá»i ká»³ quĂ¡ Ä‘á»™ lĂ  má»™t quĂ¡ trĂ¬nh lĂ¢u dĂ i, khĂ³ khÄƒn. Trong Ä‘Ă³, cháº·ng Ä‘Æ°á»ng Ä‘áº§u tiĂªn táº­p trung vĂ o má»¥c tiĂªu á»•n Ä‘á»‹nh má»i máº·t tĂ¬nh hĂ¬nh kinh táº¿ - xĂ£ há»™i Ä‘á»ƒ táº¡o tiá»n Ä‘á» cho cĂ´ng nghiá»‡p hĂ³a xĂ£ há»™i chá»§ nghÄ©a.
+- **ChĂº trá»ng váº¥n Ä‘á» xĂ£ há»™i vĂ  Ä‘á»‘i ngoáº¡i:** Nháº¥n máº¡nh chĂ­nh sĂ¡ch xĂ£ há»™i láº¥y con ngÆ°á»i lĂ m má»¥c Ä‘Ă­ch cao nháº¥t; thá»±c thi Ä‘Æ°á»ng lá»‘i Ä‘á»‘i ngoáº¡i hĂ²a bĂ¬nh, Ä‘á»™c láº­p, tá»± chá»§, Ä‘a dáº¡ng hĂ³a vĂ  Ä‘a phÆ°Æ¡ng hĂ³a cĂ¡c má»‘i quan há»‡.
+- **RĂºt ra bĂ i há»c kinh nghiá»‡m quĂ½ bĂ¡u:** Äáº·c biá»‡t lĂ  tÆ° tÆ°á»Ÿng "láº¥y dĂ¢n lĂ m gá»‘c", tĂ´n trá»ng quy luáº­t khĂ¡ch quan vĂ  káº¿t há»£p sá»©c máº¡nh dĂ¢n tá»™c vá»›i sá»©c máº¡nh thá»i Ä‘áº¡i.
+
+**Káº¿t luáº­n:** Äáº¡i há»™i VI Ä‘Ă£ Ä‘Æ°a Viá»‡t Nam thoĂ¡t khá»i tĂ¬nh tráº¡ng khá»§ng hoáº£ng nghiĂªm trá»ng, chuyá»ƒn Ä‘á»•i toĂ n diá»‡n tá»« tÆ° duy Ä‘áº¿n hĂ nh Ä‘á»™ng Ä‘á»ƒ vÆ°Æ¡n lĂªn phĂ¡t triá»ƒn.
+
+Nguá»“n:
+- Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=21, chunkIndex=17
+- Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=39, chunkIndex=35
+- Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=41, chunkIndex=37
+
+Sources:
+1. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=39, chunkIndex=35, score=0.9400000000000001
+2. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=41, chunkIndex=37, score=0.9400000000000001
+3. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=21, chunkIndex=17, score=0.9400000000000001
+
+Auto checks:
+- has_answer: true
+- has_sources: true
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: false
+- controlled_refusal: false
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: n/a
+- latency_ms: 56430
+
+Verdict:
+PASS
+
+Notes:
+- n/a
+
+--------------------------------------------------
+
+[Q02] TrÆ°á»›c Äá»•i má»›i, ná»n kinh táº¿ Viá»‡t Nam gáº·p nhá»¯ng khĂ³ khÄƒn lá»›n nĂ o?
+
+Expected behavior:
+Q01â€“Q09 nĂªn tráº£ lá»i Ä‘Æ°á»£c dá»±a trĂªn tĂ i liá»‡u 1986â€“2000. Q10 lĂ  cĂ¢u báº«y; náº¿u chÆ°a cĂ³ tĂ i liá»‡u thá»i Äinh, pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t.
+
+Answer:
+TrÆ°á»›c Äá»•i má»›i, ná»n kinh táº¿ Viá»‡t Nam gáº·p pháº£i nhá»¯ng khĂ³ khÄƒn lá»›n sau:
+
+- **TĂ¬nh tráº¡ng chung:** Viá»‡t Nam lĂ  má»™t nÆ°á»›c nĂ´ng nghiá»‡p, nghĂ¨o nĂ n, láº¡c háº­u vĂ  rÆ¡i vĂ o tĂ¬nh tráº¡ng khá»§ng hoáº£ng nghiĂªm trá»ng.
+- **Vá» cÆ¡ cháº¿ quáº£n lĂ½:** Tá»“n táº¡i suá»‘t má»™t thá»i gian dĂ i cÆ¡ cháº¿ má»‡nh lá»‡nh, bao cáº¥p.
+- **Vá» nháº­n thá»©c vĂ  lĂ£nh Ä‘áº¡o:**
+    - CĂ³ nhá»¯ng sai láº§m, khuyáº¿t Ä‘iá»ƒm trong quĂ¡ trĂ¬nh lĂ£nh Ä‘áº¡o vĂ  quáº£n lĂ½ xĂ£ há»™i cá»§a Äáº£ng.
+    - Nháº­n thá»©c lĂ½ luáº­n bá»‹ láº¡c háº­u, Ä‘áº·c biá»‡t lĂ  cĂ¡c quan niá»‡m vá» cĂ´ng nghiá»‡p hĂ³a, cáº£i táº¡o xĂ£ há»™i chá»§ nghÄ©a, cÆ¡ cháº¿ quáº£n lĂ½ kinh táº¿, phĂ¢n phá»‘i vĂ  lÆ°u thĂ´ng.
+    - Máº¯c bá»‡nh duy Ă½ chĂ­, giáº£n Ä‘Æ¡n hĂ³a, vá»«a chá»§ quan nĂ³ng vá»™i, vá»«a báº£o thá»§, trĂ¬ trá»‡.
+
+Nguá»“n:
+- [Nguá»“n 1] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=39-39, chunkIndex=35
+- [Nguá»“n 3] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=21-21, chunkIndex=17
+
+Sources:
+1. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=39, chunkIndex=35, score=0.9400000000000001
+2. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=41, chunkIndex=37, score=0.9400000000000001
+3. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=21, chunkIndex=17, score=0.9400000000000001
+
+Auto checks:
+- has_answer: true
+- has_sources: true
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: false
+- controlled_refusal: false
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: n/a
+- latency_ms: 33180
+
+Verdict:
+PASS
+
+Notes:
+- n/a
+
+--------------------------------------------------
+
+[Q03] ChĂ­nh sĂ¡ch Äá»•i má»›i Ä‘Ă£ thay Ä‘á»•i cÆ¡ cháº¿ quáº£n lĂ½ kinh táº¿ á»Ÿ Viá»‡t Nam nhÆ° tháº¿ nĂ o?
+
+Expected behavior:
+Q01â€“Q09 nĂªn tráº£ lá»i Ä‘Æ°á»£c dá»±a trĂªn tĂ i liá»‡u 1986â€“2000. Q10 lĂ  cĂ¢u báº«y; náº¿u chÆ°a cĂ³ tĂ i liá»‡u thá»i Äinh, pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t.
+
+Answer:
+ChĂ­nh sĂ¡ch Äá»•i má»›i Ä‘Ă£ thay Ä‘á»•i cÆ¡ cháº¿ quáº£n lĂ½ kinh táº¿ á»Ÿ Viá»‡t Nam nhÆ° sau:
+
+- **Thay Ä‘á»•i vá» cÆ¡ cháº¿ váº­n hĂ nh:** Chuyá»ƒn tá»« cÆ¡ cháº¿ má»‡nh lá»‡nh, bao cáº¥p Ä‘Ă£ tá»“n táº¡i suá»‘t má»™t thá»i gian dĂ i sang phĂ¡t triá»ƒn theo cÆ¡ cháº¿ thá»‹ trÆ°á»ng vĂ  Ă¡p dá»¥ng cÆ¡ cháº¿ quáº£n lĂ½ kinh táº¿ má»›i.
+- **Thay Ä‘á»•i vá» thĂ nh pháº§n kinh táº¿:** Thá»«a nháº­n tĂ­nh cháº¥t nhiá»u thĂ nh pháº§n cá»§a ná»n kinh táº¿.
+- **Má»¥c tiĂªu vĂ  phÆ°Æ¡ng chĂ¢m:** Thá»±c hiá»‡n Ä‘á»•i má»›i toĂ n diá»‡n vĂ  triá»‡t Ä‘á»ƒ, trong Ä‘Ă³ trá»ng tĂ¢m lĂ  Ä‘á»•i má»›i kinh táº¿ nháº±m giáº£i phĂ³ng má»i nÄƒng lá»±c sáº£n xuáº¥t hiá»‡n cĂ³ vĂ  khai thĂ¡c má»i kháº£ nÄƒng tiá»m tĂ ng cá»§a Ä‘áº¥t nÆ°á»›c.
+
+Nguá»“n:
+- Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=21, chunkIndex=17
+- Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=39, chunkIndex=35
+
+Sources:
+1. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=39, chunkIndex=35, score=0.9400000000000001
+2. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=41, chunkIndex=37, score=0.9400000000000001
+3. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=21, chunkIndex=17, score=0.9400000000000001
+
+Auto checks:
+- has_answer: true
+- has_sources: true
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: false
+- controlled_refusal: false
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: n/a
+- latency_ms: 42983
+
+Verdict:
+PASS
+
+Notes:
+- n/a
+
+--------------------------------------------------
+
+[Q04] VĂ¬ sao Viá»‡t Nam pháº£i chuyá»ƒn sang ná»n kinh táº¿ hĂ ng hĂ³a nhiá»u thĂ nh pháº§n?
+
+Expected behavior:
+Q01â€“Q09 nĂªn tráº£ lá»i Ä‘Æ°á»£c dá»±a trĂªn tĂ i liá»‡u 1986â€“2000. Q10 lĂ  cĂ¢u báº«y; náº¿u chÆ°a cĂ³ tĂ i liá»‡u thá»i Äinh, pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t.
+
+Answer:
+Dá»±a trĂªn cĂ¡c tĂ i liá»‡u Ä‘Æ°á»£c cung cáº¥p, viá»‡c Viá»‡t Nam chuyá»ƒn sang ná»n kinh táº¿ hĂ ng hĂ³a nhiá»u thĂ nh pháº§n xuáº¥t phĂ¡t tá»« nhá»¯ng nguyĂªn nhĂ¢n vĂ  má»¥c tiĂªu chĂ­nh sau:
+
+*   **Kháº¯c phá»¥c nhá»¯ng háº¡n cháº¿ cá»§a cÆ¡ cháº¿ cÅ©:** Ná»n kinh táº¿ trÆ°á»›c Ä‘Ă³ chá»‹u áº£nh hÆ°á»Ÿng bá»Ÿi tĂ­nh cá»‘ há»¯u cá»§a thá»i ká»³ quan liĂªu, bao cáº¥p vá»›i ná»n cĂ´ng nghá»‡ - ká»¹ thuáº­t láº¡c háº­u vĂ  trĂ¬nh Ä‘á»™ tay nghá» tháº¥p. Äáº·c biá»‡t, Ä‘á»‘i vá»›i cĂ´ng nghiá»‡p quá»‘c doanh, viá»‡c váº­n hĂ nh theo cÆ¡ cháº¿ cÅ© dáº«n Ä‘áº¿n giĂ¡ thĂ nh sáº£n pháº©m cao, cháº¥t lÆ°á»£ng kĂ©m, gĂ¢y tá»•n tháº¥t khĂ´ng nhá» cho NhĂ  nÆ°á»›c.
+*   **PhĂ¡t huy hiá»‡u quáº£ tá»« cĂ¡c thĂ nh pháº§n kinh táº¿ khĂ¡c (Ä‘áº·c biá»‡t lĂ  kinh táº¿ há»™):** Thá»±c táº¿ cho tháº¥y mĂ´ hĂ¬nh kinh doanh cá»§a há»™ nĂ´ng dĂ¢n (nhÆ° mĂ´ hĂ¬nh VAC, VACR) mang láº¡i hiá»‡u quáº£ cao, táº¡o thu nháº­p lá»›n cho hĂ ng chá»¥c triá»‡u há»™, giáº£i quyáº¿t viá»‡c lĂ m vĂ  gĂ³p pháº§n lĂ m giĂ u cho Ä‘áº¥t nÆ°á»›c. Minh chá»©ng lĂ  theo kháº£o sĂ¡t nÄƒm 1989 táº¡i 4 tá»‰nh, khu vá»±c há»™ xĂ£ viĂªn sáº£n xuáº¥t tá»›i 70,59% sáº£n pháº©m thĂ³c, cao hÆ¡n nhiá»u so vá»›i khu vá»±c nhĂ  nÆ°á»›c (12,87%) vĂ  táº­p thá»ƒ (16,54%).
+*   **ÄĂ¡p á»©ng yĂªu cáº§u chiáº¿n lÆ°á»£c phĂ¡t triá»ƒn kinh táº¿ - xĂ£ há»™i:** Viá»‡c chuyá»ƒn dá»‹ch sang ná»n kinh táº¿ hĂ ng hĂ³a nháº±m:
+    *   Gáº¯n káº¿t thá»‹ trÆ°á»ng trong nÆ°á»›c vá»›i ngoĂ i nÆ°á»›c vĂ  Ä‘áº©y máº¡nh xuáº¥t kháº©u.
+    *   á»”n Ä‘á»‹nh tĂ¬nh hĂ¬nh kinh táº¿ - xĂ£ há»™i thĂ´ng qua phĂ¡t triá»ƒn nĂ´ng - lĂ¢m - ngÆ° nghiá»‡p gáº¯n vá»›i cĂ´ng nghiá»‡p cháº¿ biáº¿n.
+    *   Táº¡o ra má»™t cÆ¡ cáº¥u kinh táº¿ má»›i, Ä‘áº·t ná»n táº£ng cho sá»± phĂ¡t triá»ƒn cá»§a kinh táº¿ thá»‹ trÆ°á»ng, tá»« Ä‘Ă³ thĂºc Ä‘áº©y tÄƒng trÆ°á»Ÿng cá»§a toĂ n bá»™ ná»n kinh táº¿ quá»‘c dĂ¢n.
+
+**Káº¿t luáº­n:** Viá»‡t Nam chuyá»ƒn sang ná»n kinh táº¿ hĂ ng hĂ³a nhiá»u thĂ nh pháº§n Ä‘á»ƒ thay tháº¿ cÆ¡ cháº¿ quáº£n lĂ½ quan liĂªu, bao cáº¥p kĂ©m hiá»‡u quáº£ báº±ng má»™t há»‡ thá»‘ng linh hoáº¡t hÆ¡n, táº­n dá»¥ng Ä‘Æ°á»£c sá»©c sáº£n xuáº¥t cá»§a má»i thĂ nh pháº§n kinh táº¿ nháº±m thĂºc Ä‘áº©y tÄƒng trÆ°á»Ÿng vĂ  cáº£i thiá»‡n Ä‘á»i sá»‘ng nhĂ¢n dĂ¢n.
+
+Nguá»“n:
+- [Nguá»“n 1] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=59-59, chunkIndex=55
+- [Nguá»“n 2] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=146-146, chunkIndex=142
+- [Nguá»“n 3] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=76-76, chunkIndex=72
+
+Sources:
+1. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=59, chunkIndex=55, score=0.9400000000000001
+2. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=146, chunkIndex=142, score=0.9400000000000001
+3. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=76, chunkIndex=72, score=0.9400000000000001
+
+Auto checks:
+- has_answer: true
+- has_sources: true
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: false
+- controlled_refusal: false
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: n/a
+- latency_ms: 58784
+
+Verdict:
+PASS
+
+Notes:
+- n/a
+
+--------------------------------------------------
+
+[Q05] NĂ´ng nghiá»‡p Viá»‡t Nam thay Ä‘á»•i ra sao sau Äá»•i má»›i?
+
+Expected behavior:
+Q01â€“Q09 nĂªn tráº£ lá»i Ä‘Æ°á»£c dá»±a trĂªn tĂ i liá»‡u 1986â€“2000. Q10 lĂ  cĂ¢u báº«y; náº¿u chÆ°a cĂ³ tĂ i liá»‡u thá»i Äinh, pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t.
+
+Answer:
+Sau Äá»•i má»›i, nĂ´ng nghiá»‡p Viá»‡t Nam Ä‘Ă£ cĂ³ nhá»¯ng thay Ä‘á»•i cÄƒn báº£n nhÆ° sau:
+
+- **Vá» cÆ¡ cháº¿ vĂ  Ä‘á»™ng lá»±c sáº£n xuáº¥t:** Viá»‡c Ă¡p dá»¥ng cÆ¡ cháº¿ khoĂ¡n há»™ káº¿t há»£p vá»›i cĂ¡c chĂ­nh sĂ¡ch khuyáº¿n khĂ­ch nĂ´ng dĂ¢n lĂ m giĂ u chĂ­nh Ä‘Ă¡ng Ä‘Ă£ táº¡o ra Ä‘á»™ng lá»±c má»›i thĂºc Ä‘áº©y sáº£n xuáº¥t nĂ´ng nghiá»‡p.
+- **Vá» vai trĂ² cá»§a kinh táº¿ há»™:** Kinh táº¿ há»™ nĂ´ng dĂ¢n trá»Ÿ thĂ nh Ä‘Æ¡n vá»‹ cung cáº¥p pháº§n lá»›n thá»±c pháº©m (thá»‹t, cĂ¡, rau quáº£) cho xĂ£ há»™i, khĂ´ng chá»‰ Ä‘áº£m báº£o Ä‘á»§ lÆ°Æ¡ng thá»±c cho há»™ gia Ä‘Ă¬nh mĂ  cĂ²n táº¡o ra khá»‘i lÆ°á»£ng lÆ°Æ¡ng thá»±c hĂ ng hĂ³a lá»›n cho xuáº¥t kháº©u vĂ  thá»‹ trÆ°á»ng ná»™i Ä‘á»‹a.
+- **Vá» mĂ´ hĂ¬nh phĂ¡t triá»ƒn:** Tá»« kinh táº¿ há»™, mĂ´ hĂ¬nh kinh táº¿ trang tráº¡i Ä‘Ă£ xuáº¥t hiá»‡n nhÆ° má»™t bÆ°á»›c phĂ¡t triá»ƒn cao hÆ¡n. MĂ´ hĂ¬nh nĂ y Ä‘Æ°á»£c Äáº£ng vĂ  NhĂ  nÆ°á»›c khuyáº¿n khĂ­ch thĂ´ng qua cĂ¡c chĂ­nh sĂ¡ch vá» tĂ­n dá»¥ng, thuáº¿, Ä‘áº¥t Ä‘ai, Ä‘áº§u tÆ°, cĂ´ng nghá»‡, lao Ä‘á»™ng, khuyáº¿n nĂ´ng vĂ  khuyáº¿n cĂ´ng.
+- **Vá» diá»‡n máº¡o kinh táº¿ - xĂ£ há»™i nĂ´ng thĂ´n:** Sá»± phĂ¡t triá»ƒn nĂ´ng nghiá»‡p cĂ¹ng sá»± há»— trá»£ cá»§a NhĂ  nÆ°á»›c Ä‘Ă£ lĂ m thay Ä‘á»•i cÄƒn báº£n bá»™ máº·t nĂ´ng thĂ´n:
+    - **Äiá»‡n khĂ­ hĂ³a:** Äáº¿n nÄƒm 2000, cĂ³ 7.953 xĂ£ cĂ³ Ä‘iá»‡n (chiáº¿m 89,4%).
+    - **Háº¡ táº§ng giao thĂ´ng:** NÄƒm 2000, 8.439 xĂ£ (94,6%) cĂ³ Ä‘Æ°á»ng Ă´ tĂ´ Ä‘áº¿n UBND xĂ£; trĂªn 50% Ä‘Æ°á»ng liĂªn thĂ´n Ä‘Æ°á»£c bĂª tĂ´ng hĂ³a hoáº·c nhá»±a hĂ³a.
+    - **GiĂ¡o dá»¥c:** NÄƒm 2000, tá»· lá»‡ xĂ£ cĂ³ trÆ°á»ng tiá»ƒu há»c Ä‘áº¡t 98,9% vĂ  trÆ°á»ng trung há»c cÆ¡ sá»Ÿ Ä‘áº¡t 85,3%.
+    - **Y táº¿:** Má»Ÿ rá»™ng, xĂ¢y má»›i cĂ¡c cÆ¡ sá»Ÿ khĂ¡m chá»¯a bá»‡nh vĂ  tÄƒng cÆ°á»ng cĂ¡n bá»™ y táº¿ xuá»‘ng cÆ¡ sá»Ÿ.
+
+Nguá»“n: [Nguá»“n 2] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=286-286, chunkIndex=282
+
+Sources:
+1. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=39, chunkIndex=35, score=0.9400000000000001
+2. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=286, chunkIndex=282, score=0.9400000000000001
+3. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=41, chunkIndex=37, score=0.9400000000000001
+
+Auto checks:
+- has_answer: true
+- has_sources: true
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: false
+- controlled_refusal: false
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: n/a
+- latency_ms: 54415
+
+Verdict:
+PASS
+
+Notes:
+- n/a
+
+--------------------------------------------------
+
+[Q06] Viá»‡t Nam bĂ¬nh thÆ°á»ng hĂ³a quan há»‡ vá»›i Hoa Ká»³ vĂ o nÄƒm nĂ o vĂ  Ă½ nghÄ©a lĂ  gĂ¬?
+
+Expected behavior:
+Q01â€“Q09 nĂªn tráº£ lá»i Ä‘Æ°á»£c dá»±a trĂªn tĂ i liá»‡u 1986â€“2000. Q10 lĂ  cĂ¢u báº«y; náº¿u chÆ°a cĂ³ tĂ i liá»‡u thá»i Äinh, pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t.
+
+Answer:
+Dá»±a trĂªn cĂ¡c tĂ i liá»‡u Ä‘Æ°á»£c cung cáº¥p, khĂ´ng cĂ³ thĂ´ng tin vá» nÄƒm Viá»‡t Nam bĂ¬nh thÆ°á»ng hĂ³a quan há»‡ vá»›i Hoa Ká»³ cÅ©ng nhÆ° Ă½ nghÄ©a cá»¥ thá»ƒ cá»§a sá»± kiá»‡n nĂ y.
+
+TĂ i liá»‡u chá»‰ Ä‘á» cáº­p ráº±ng trong giai Ä‘oáº¡n 1986-1990, quan há»‡ giá»¯a Viá»‡t Nam vá»›i má»™t sá»‘ nÆ°á»›c lá»›n nhÆ° Má»¹ vĂ  Trung Quá»‘c "chÆ°a Ä‘Æ°á»£c bĂ¬nh thÆ°á»ng hĂ³a vĂ  khĂ´i phá»¥c hoĂ n toĂ n" [Nguá»“n 1].
+
+Nguá»“n: [Nguá»“n 1] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=196-196, chunkIndex=192.
+
+Sources:
+1. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=196, chunkIndex=192, score=0.9400000000000001
+2. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=34, chunkIndex=30, score=0.9400000000000001
+3. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=197, chunkIndex=193, score=0.9400000000000001
+
+Auto checks:
+- has_answer: true
+- has_sources: true
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: false
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: n/a
+- latency_ms: 34560
+
+Verdict:
+WARNING
+
+Notes:
+- Answer says some information is missing; manual review recommended.
+
+--------------------------------------------------
+
+[Q07] Viá»‡t Nam gia nháº­p ASEAN vĂ o nÄƒm nĂ o? Sá»± kiá»‡n nĂ y pháº£n Ă¡nh thay Ä‘á»•i gĂ¬ trong chĂ­nh sĂ¡ch Ä‘á»‘i ngoáº¡i?
+
+Expected behavior:
+Q01â€“Q09 nĂªn tráº£ lá»i Ä‘Æ°á»£c dá»±a trĂªn tĂ i liá»‡u 1986â€“2000. Q10 lĂ  cĂ¢u báº«y; náº¿u chÆ°a cĂ³ tĂ i liá»‡u thá»i Äinh, pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t.
+
+Answer:
+Dá»±a trĂªn cĂ¡c tĂ i liá»‡u Ä‘Æ°á»£c cung cáº¥p, khĂ´ng cĂ³ thĂ´ng tin vá» nÄƒm Viá»‡t Nam gia nháº­p ASEAN cÅ©ng nhÆ° sá»± kiá»‡n nĂ y pháº£n Ă¡nh thay Ä‘á»•i gĂ¬ trong chĂ­nh sĂ¡ch Ä‘á»‘i ngoáº¡i.
+
+Nguá»“n cung cáº¥p chá»‰ Ä‘á» cáº­p Ä‘áº¿n:
+- Viá»‡c nĂ¢ng cao hiá»‡u quáº£ kinh táº¿ Ä‘á»‘i ngoáº¡i, Ä‘a dáº¡ng hĂ³a quan há»‡ kinh táº¿ Ä‘á»‘i ngoáº¡i, má»Ÿ rá»™ng thá»‹ trÆ°á»ng sang tháº¿ giá»›i tÆ° báº£n, nháº¥t lĂ  cĂ¡c nÆ°á»›c chĂ¢u Ă‚u trong giai Ä‘oáº¡n 1986-1990 (Nguá»“n 2).
+- Nhiá»‡m vá»¥ "tiáº¿p tá»¥c má»Ÿ rá»™ng quan há»‡ Ä‘á»‘i ngoáº¡i" Ä‘Æ°á»£c xĂ¡c Ä‘á»‹nh táº¡i Há»™i nghá»‹ toĂ n quá»‘c giá»¯a nhiá»‡m ká»³ tá»« ngĂ y 20 Ä‘áº¿n 25-1-1994 (Nguá»“n 3).
+
+Nguá»“n: [Nguá»“n 2] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=101-101, chunkIndex=97; [Nguá»“n 3] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=151-151, chunkIndex=147.
+
+Sources:
+1. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=120, chunkIndex=116, score=0.9233333333333333
+2. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=101, chunkIndex=97, score=0.8666666666666667
+3. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=151, chunkIndex=147, score=0.8666666666666667
+
+Auto checks:
+- has_answer: true
+- has_sources: true
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: false
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: n/a
+- latency_ms: 29255
+
+Verdict:
+WARNING
+
+Notes:
+- Answer says some information is missing; manual review recommended.
+
+--------------------------------------------------
+
+[Q08] Äá»i sá»‘ng nhĂ¢n dĂ¢n Viá»‡t Nam thay Ä‘á»•i nhÆ° tháº¿ nĂ o trong giai Ä‘oáº¡n 1986â€“2000?
+
+Expected behavior:
+Q01â€“Q09 nĂªn tráº£ lá»i Ä‘Æ°á»£c dá»±a trĂªn tĂ i liá»‡u 1986â€“2000. Q10 lĂ  cĂ¢u báº«y; náº¿u chÆ°a cĂ³ tĂ i liá»‡u thá»i Äinh, pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t.
+
+Answer:
+Dá»±a trĂªn tĂ i liá»‡u cung cáº¥p, Ä‘á»i sá»‘ng nhĂ¢n dĂ¢n Viá»‡t Nam trong giai Ä‘oáº¡n 1986â€“2000 cĂ³ nhá»¯ng thay Ä‘á»•i vĂ  Ä‘á»‹nh hÆ°á»›ng phĂ¡t triá»ƒn nhÆ° sau:
+
+**1. Vá» Ä‘á»‹nh hÆ°á»›ng chĂ­nh sĂ¡ch xĂ£ há»™i (tá»« Äáº¡i há»™i VI):**
+* Äáº£ng xĂ¡c Ä‘á»‹nh má»¥c Ä‘Ă­ch cao nháº¥t cá»§a má»i hoáº¡t Ä‘á»™ng lĂ  phá»¥c vá»¥ con ngÆ°á»i vĂ  phĂ¡t huy yáº¿u tá»‘ con ngÆ°á»i.
+* Táº­p trung thá»±c hiá»‡n cĂ¡c chĂ­nh sĂ¡ch xĂ£ há»™i cÆ¡ báº£n, lĂ¢u dĂ i nhÆ°: káº¿ hoáº¡ch hĂ³a dĂ¢n sá»‘, giáº£i quyáº¿t viá»‡c lĂ m cho ngÆ°á»i lao Ä‘á»™ng, thá»±c hiá»‡n cĂ´ng báº±ng xĂ£ há»™i, Ä‘áº£m báº£o an toĂ n xĂ£ há»™i vĂ  khĂ´i phá»¥c ká»· cÆ°Æ¡ng trong Ä‘á»i sá»‘ng.
+* ChÄƒm lo Ä‘Ă¡p á»©ng cĂ¡c nhu cáº§u vá» giĂ¡o dá»¥c, vÄƒn hĂ³a, báº£o vá»‡ vĂ  tÄƒng cÆ°á»ng sá»©c khá»e cho nhĂ¢n dĂ¢n, Ä‘á»“ng thá»i xĂ¢y dá»±ng chĂ­nh sĂ¡ch báº£o trá»£ xĂ£ há»™i, thá»±c hiá»‡n Ä‘Ăºng chĂ­nh sĂ¡ch giai cáº¥p vĂ  dĂ¢n tá»™c.
+* Má»¥c tiĂªu tá»•ng quĂ¡t trong cháº·ng Ä‘Æ°á»ng Ä‘áº§u tiĂªn lĂ  á»•n Ä‘á»‹nh má»i máº·t tĂ¬nh hĂ¬nh kinh táº¿ - xĂ£ há»™i.
+
+**2. Vá» Ä‘á»i sá»‘ng vÄƒn hĂ³a, tinh tháº§n (Ä‘áº·c biá»‡t giai Ä‘oáº¡n 1991-1995):**
+* **Tiáº¿p cáº­n thĂ´ng tin:** NgÆ°á»i dĂ¢n Ä‘Æ°á»£c cáº­p nháº­t thĂ´ng tin thá»i sá»± trong nÆ°á»›c vĂ  quá»‘c táº¿ nhanh chĂ³ng hÆ¡n nhá» sá»± Ä‘a dáº¡ng cá»§a cĂ¡c loáº¡i hĂ¬nh bĂ¡o chĂ­ nhÆ° bĂ¡o viáº¿t, bĂ¡o nĂ³i vĂ  bĂ¡o hĂ¬nh.
+* **MĂ´i trÆ°á»ng xĂ£ há»™i:** HĂ¬nh thĂ nh báº§u khĂ´ng khĂ­ dĂ¢n chá»§, tháº³ng tháº¯n, nhĂ¬n tháº³ng vĂ o sá»± tháº­t. BĂ¡o chĂ­ tĂ­ch cá»±c Ä‘áº¥u tranh chá»‘ng tham nhÅ©ng vĂ  cĂ¡c tiĂªu cá»±c xĂ£ há»™i.
+* **VÄƒn há»c nghá»‡ thuáº­t:** Trá»Ÿ nĂªn sĂ´i Ä‘á»™ng, gáº¯n bĂ³ máº­t thiáº¿t vá»›i Ä‘á»i sá»‘ng xĂ£ há»™i. CĂ¡c tĂ¡c pháº©m thá»ƒ hiá»‡n Ä‘áº­m nĂ©t ná»™i dung hiá»‡n thá»±c, dĂ¢n chá»§ vĂ  nhĂ¢n Ä‘áº¡o, giĂºp ngÆ°á»i Ä‘á»c nháº­n diá»‡n bá»©c tranh xĂ£ há»™i má»™t cĂ¡ch toĂ n diá»‡n vĂ  chĂ¢n thá»±c hÆ¡n.
+
+**3. Vá» kinh táº¿:**
+* CĂ³ chá»§ trÆ°Æ¡ng giáº£i phĂ³ng má»i nÄƒng lá»±c sáº£n xuáº¥t hiá»‡n cĂ³ vĂ  khai thĂ¡c má»i kháº£ nÄƒng tiá»m tĂ ng cá»§a Ä‘áº¥t nÆ°á»›c Ä‘á»ƒ kháº¯c phá»¥c khá»§ng hoáº£ng.
+
+Nguá»“n:
+- [Nguá»“n 1] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=222-222, chunkIndex=218
+- [Nguá»“n 2] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=39-39, chunkIndex=35
+- [Nguá»“n 3] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=41-41, chunkIndex=37
+
+Sources:
+1. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=222, chunkIndex=218, score=0.9400000000000001
+2. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=39, chunkIndex=35, score=0.9400000000000001
+3. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=41, chunkIndex=37, score=0.9400000000000001
+
+Auto checks:
+- has_answer: true
+- has_sources: true
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: false
+- controlled_refusal: false
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: n/a
+- latency_ms: 55247
+
+Verdict:
+PASS
+
+Notes:
+- n/a
+
+--------------------------------------------------
+
+[Q09] Nhá»¯ng háº¡n cháº¿ cá»§a cĂ´ng cuá»™c Äá»•i má»›i trong giai Ä‘oáº¡n Ä‘áº§u lĂ  gĂ¬?
+
+Expected behavior:
+Q01â€“Q09 nĂªn tráº£ lá»i Ä‘Æ°á»£c dá»±a trĂªn tĂ i liá»‡u 1986â€“2000. Q10 lĂ  cĂ¢u báº«y; náº¿u chÆ°a cĂ³ tĂ i liá»‡u thá»i Äinh, pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t.
+
+Answer:
+Dá»±a trĂªn cĂ¡c tĂ i liá»‡u Ä‘Æ°á»£c cung cáº¥p, khĂ´ng cĂ³ thĂ´ng tin cá»¥ thá»ƒ nĂ o liá»‡t kĂª vá» "nhá»¯ng háº¡n cháº¿ cá»§a cĂ´ng cuá»™c Äá»•i má»›i trong giai Ä‘oáº¡n Ä‘áº§u".
+
+CĂ¡c nguá»“n tĂ i liá»‡u chá»‰ táº­p trung trĂ¬nh bĂ y vá»:
+- Má»¥c tiĂªu vĂ  ná»™i dung Ä‘á»•i má»›i vá» kinh táº¿ vĂ  chĂ­nh trá»‹ táº¡i Äáº¡i há»™i VI (Nguá»“n 1).
+- Nhá»¯ng khĂ³ khÄƒn, thĂ¡ch thá»©c vá» giĂ¡ cáº£, tĂ i chĂ­nh, tiá»n tá»‡, láº¡m phĂ¡t vĂ  cÆ¡ sá»Ÿ háº¡ táº§ng giao thĂ´ng mĂ  NhĂ  nÆ°á»›c cáº§n giáº£i quyáº¿t (Nguá»“n 2).
+- Nhá»¯ng báº¥t cáº­p cá»§a thá»i ká»³ trÆ°á»›c Ä‘á»•i má»›i (nhÆ° cÆ¡ cháº¿ táº­p trung quan liĂªu bao cáº¥p, tĂ¬nh tráº¡ng tá»“n táº¡i song song giĂ¡ bao cáº¥p vĂ  giĂ¡ tá»± do gĂ¢y bá»™i chi ngĂ¢n sĂ¡ch vĂ  láº¡m phĂ¡t) vĂ  cĂ¡c giáº£i phĂ¡p máº¥u chá»‘t Ä‘á»ƒ giáº£i phĂ³ng sá»©c sáº£n xuáº¥t (Nguá»“n 3).
+
+Nguá»“n:
+- [Nguá»“n 1] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=40-40, chunkIndex=36
+- [Nguá»“n 2] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=46-46, chunkIndex=42
+- [Nguá»“n 3] fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=51-51, chunkIndex=47
+
+Sources:
+1. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=40, chunkIndex=36, score=0.9400000000000001
+2. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=46, chunkIndex=42, score=0.9400000000000001
+3. fileName=Lá»‹ch sá»­ Viá»‡t Nam táº­p 15 Tá»« nÄƒm 1986 Ä‘áº¿n nÄƒm 2000-Nguyá»…n Ngá»c MĂ£o-2017.pdf, pageNumber=51, chunkIndex=47, score=0.9400000000000001
+
+Auto checks:
+- has_answer: true
+- has_sources: true
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: false
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: n/a
+- latency_ms: 42677
+
+Verdict:
+WARNING
+
+Notes:
+- Answer says some information is missing; manual review recommended.
+
+--------------------------------------------------
+
+[Q10] Äinh Bá»™ LÄ©nh lĂ  ai vĂ  dÆ°á»›i trÆ°á»›ng Ă´ng cĂ³ nhá»¯ng tÆ°á»›ng nĂ o?
+
+Expected behavior:
+Q01â€“Q09 nĂªn tráº£ lá»i Ä‘Æ°á»£c dá»±a trĂªn tĂ i liá»‡u 1986â€“2000. Q10 lĂ  cĂ¢u báº«y; náº¿u chÆ°a cĂ³ tĂ i liá»‡u thá»i Äinh, pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t.
+
+Answer:
+TĂ i liá»‡u hiá»‡n táº¡i khĂ´ng chá»©a thĂ´ng tin vá» Äinh Bá»™ LÄ©nh vĂ¬ ná»™i dung tĂ i liá»‡u Ä‘ang viáº¿t vá» giai Ä‘oáº¡n 1986â€“2000. Cáº§n bá»• sung tĂ i liá»‡u phĂ¹ há»£p, vĂ­ dá»¥ tĂ i liá»‡u vá» lá»‹ch sá»­ Viá»‡t Nam tháº¿ ká»· X hoáº·c thá»i Äinh, Ä‘á»ƒ tráº£ lá»i chĂ­nh xĂ¡c.
+
+Sources:
+(none)
+
+Auto checks:
+- has_answer: true
+- has_sources: false
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: true
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: True
+- latency_ms: 5985
+
+Verdict:
+PASS_TRAP_REFUSAL
+
+Notes:
+- No sources returned.
+- Trap appears to use controlled refusal.
+
+--------------------------------------------------

@@ -58,6 +58,7 @@ class Source(BaseModel):
     file_name: str
     page_start: int
     page_end: int
+    chunk_index: int | None = None
     score: float
     support_level: str
     preview: str | None = None
@@ -82,6 +83,8 @@ class RetrievedChunk(BaseModel):
     final_score: float
     selected_for_context: bool
     reason: str
+    retrieval_query: str | None = None
+    quality_penalty: float = 0.0
 
 
 def utc_now() -> str:

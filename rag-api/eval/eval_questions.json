@@ -278,5 +278,22 @@
     "should_refuse": true,
     "category": "refusal",
     "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
+  },
+  {
+    "id": "q021",
+    "document_id": "37a5e620-e6c8-4e96-8ff0-c32dc7de3d46",
+    "question": "kinh te viet nam",
+    "expected_keywords": [],
+    "required_source_keywords": [],
+    "should_refuse": true,
+    "category": "refusal",
+    "expected_behavior": "insufficient_context",
+    "expected_checks": [
+      "answer_says_not_enough_information",
+      "no_strong_citation",
+      "low_confidence",
+      "no_raw_json_in_ui"
+    ],
+    "user_id": "89616786-4199-40e6-9ee5-4919d392c2c3"
   }
 ]

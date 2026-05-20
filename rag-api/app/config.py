@@ -21,8 +21,9 @@ class Settings(BaseSettings):
     chunk_size: int = Field(700, alias='CHUNK_SIZE')
     chunk_overlap: int = Field(120, alias='CHUNK_OVERLAP')
     top_k: int = Field(12, alias='TOP_K')
+    retrieve_top_k: int | None = Field(None, alias='RETRIEVE_TOP_K')
     max_context_chunks: int = Field(5, alias='MAX_CONTEXT_CHUNKS')
-    min_score: float = Field(0.45, alias='MIN_SCORE')
+    min_score: float = Field(0.50, alias='MIN_SCORE')
     llm_provider: str = Field('openai', alias='LLM_PROVIDER')
     llm_base_url: str | None = Field(None, alias='LLM_BASE_URL')
     llm_api_key: str | None = Field(None, alias='LLM_API_KEY')
@@ -33,6 +34,10 @@ class Settings(BaseSettings):
     storage_path: str = Field('/app/storage/uploads', alias='STORAGE_PATH')
     debug_report_path: str = Field('/app/storage/debug', alias='DEBUG_REPORT_PATH')
     fast_test_mode: bool = Field(False, alias='FAST_TEST_MODE')
+
+    def model_post_init(self, __context) -> None:
+        if self.retrieve_top_k is not None:
+            self.top_k = self.retrieve_top_k
 
     @property
     def mysql_config(self) -> dict:

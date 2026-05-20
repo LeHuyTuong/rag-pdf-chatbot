@@ -7,6 +7,6 @@ import java.util.List;
 import java.util.UUID;
 
 public interface ChatMessageRepository extends JpaRepository<ChatMessage, UUID> {
-	List<ChatMessage> findBySessionIdOrderByCreatedAt(UUID sessionId);
+	List<ChatMessage> findBySessionIdOrderByCreatedAtAsc(UUID sessionId);
 	long countByUserId(UUID userId);
 }

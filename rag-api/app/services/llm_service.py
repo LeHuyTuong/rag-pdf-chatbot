@@ -17,7 +17,11 @@ class LlmService:
     def answer(self, question: str, chunks: list[Chunk]) -> str:
         if not chunks:
             return REFUSAL
-        context = '\n\n'.join(f'[{i+1}] file={c.file_name}, page={c.page_start}-{c.page_end}, chunk_id={c.chunk_id}\n{c.content}' for i, c in enumerate(chunks))
+        context = '\n\n'.join(
+            f'[Nguồn {i+1}] fileName={c.file_name}, pageNumber={c.page_start}-{c.page_end}, '
+            f'chunkIndex={c.chunk_index}, chunkId={c.chunk_id}\n{c.content}'
+            for i, c in enumerate(chunks)
+        )
         prompt = self.prompt_template.format(context=context, question=question)
         if self._use_google_native_api():
             return self._answer_google_native(prompt)
@@ -228,7 +232,7 @@ class LlmService:
     def _with_sources(self, answer: str, chunks: list[Chunk]) -> str:
         source_lines = []
         for chunk in chunks[:3]:
-            source_lines.append(f'- {chunk.file_name}, page {chunk.page_start}-{chunk.page_end}, chunk_id={chunk.chunk_id}')
+            source_lines.append(f'- fileName={chunk.file_name}, pageNumber={chunk.page_start}-{chunk.page_end}, chunkIndex={chunk.chunk_index}, chunkId={chunk.chunk_id}')
         return f'{self._finish_sentence(answer)}\n\nNguồn tham khảo:\n' + '\n'.join(source_lines)
 
     def _event_phrase(self, text: str) -> str:

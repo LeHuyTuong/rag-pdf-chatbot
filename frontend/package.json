@@ -2,6 +2,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
+    "test:chat-order": "node --test src/features/chat/utils/messageOrder.test.mjs",
+    "capture:rag-screenshots": "node scripts/capture-rag-screenshots.mjs",
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {

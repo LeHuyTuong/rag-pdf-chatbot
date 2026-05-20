@@ -2,7 +2,13 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-REFUSAL_TEXT = 'Tài liệu hiện có chưa đủ để trả lời chắc chắn.'
+REFUSAL_TEXTS = (
+    'tai lieu hien co chua cung cap du thong tin',
+    'tai lieu hien co chua du',
+    'tài liệu hiện có chưa đủ',
+    'documents do not provide enough information',
+    'not enough information',
+)
 
 
 class EvaluationService:
@@ -22,9 +28,17 @@ class EvaluationService:
             expected = item.get('expected_keywords', [])
             required = item.get('required_source_keywords', [])
             if should_refuse:
-                refused = REFUSAL_TEXT.lower() in answer.lower() and normalized['confidence'] <= 0.35
+                refused = (
+                    normalized['answer_type'] == 'insufficient_context'
+                    or any(text in answer.lower() for text in REFUSAL_TEXTS)
+                ) and normalized['confidence'] < 0.55 and not self._has_strong_source(sources)
                 correct_refusals += int(refused)
-                checks = {'refusal_ok': refused}
+                checks = {
+                    'refusal_ok': refused,
+                    'low_confidence': normalized['confidence'] < 0.55,
+                    'no_strong_citation': not self._has_strong_source(sources),
+                    'answer_type': normalized['answer_type'],
+                }
                 passed = refused
             else:
                 answer_ok = self._contains_all(answer, expected)
@@ -42,8 +56,8 @@ class EvaluationService:
             details.append({
                 'question_id': item.get('id'), 'category': item.get('category'), 'question': item.get('question'),
                 'expected_keywords': expected, 'required_source_keywords': required, 'should_refuse': should_refuse,
-                'actual_answer': answer, 'confidence': normalized['confidence'], 'retrieved_chunks': retrieved_chunks,
-                'sources': sources, 'checks': checks, 'passed': passed,
+                'actual_answer': answer, 'confidence': normalized['confidence'], 'answer_type': normalized['answer_type'],
+                'retrieved_chunks': retrieved_chunks, 'sources': sources, 'checks': checks, 'passed': passed,
                 'reason': 'Passed only if all applicable category checks are true; metrics use category-specific denominators.',
             })
         total = len(items)
@@ -82,6 +96,8 @@ class EvaluationService:
             'answer': payload.get('answer', ''),
             'confidence': float(payload.get('confidence', 0) or 0),
             'sources': payload.get('sources', []) or [],
+            'related_chunks': payload.get('related_chunks', []) or [],
+            'answer_type': payload.get('answer_type', 'answered') or 'answered',
             'retrieved_chunks': payload.get('retrieved_chunks', []),
             'used_context': payload.get('used_context', ''),
         }
@@ -97,6 +113,9 @@ class EvaluationService:
             return False
         proper_numbers = [token for token in answer.replace('\n', ' ').split() if any(ch.isdigit() for ch in token)]
         return all(token.strip('.,;:') in context for token in proper_numbers)
+
+    def _has_strong_source(self, sources: list[dict]) -> bool:
+        return any(source.get('support_level') == 'strong' for source in sources)
 
     def _ratio(self, numerator: int, denominator: int) -> float:
         return round(numerator / denominator, 4) if denominator else 1.0

@@ -74,7 +74,7 @@ export default function UploadDocumentForm({ file, setFile, loading, onUpload })
             </div>
             <div>
               <p className="font-semibold text-slate-600"><span className="text-blue-600">Click to browse</span> or drag and drop</p>
-              <p className="text-sm text-slate-400 mt-1">PDF files only, up to 50MB</p>
+              <p className="text-sm text-slate-400 mt-1">PDF files only, up to 150MB</p>
             </div>
           </div>
         )}

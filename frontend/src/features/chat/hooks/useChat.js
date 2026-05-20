@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
 import { askQuestion, createChatSession, getActiveChatSession, getChatMessages, getChatReport } from '../api/chatApi';
 import { getErrorMessage } from '../../../shared/utils/errors';
+import {
+  appendPendingExchange,
+  removePendingExchange,
+  replacePendingExchange,
+  sortMessagesByCreatedAtAsc,
+} from '../utils/messageOrder.mjs';
 
 const ACTIVE_DOCUMENT_KEY = 'activeDocumentId';
 const ACTIVE_SESSION_KEY = 'activeChatSessionId';
@@ -38,7 +44,7 @@ export default function useChat(documentId) {
 
         const restoredMessages = await getChatMessages(session.id);
         if (cancelled) return;
-        setMessages(restoredMessages);
+        setMessages(sortMessagesByCreatedAtAsc(restoredMessages));
       } catch (err) {
         if (!cancelled) {
           setError(getErrorMessage(err, 'Failed to restore chat history.'));
@@ -84,19 +90,26 @@ export default function useChat(documentId) {
     setQuestion('');
     setError('');
     setSending(true);
-    const optimisticId = `pending-${Date.now()}`;
-    setMessages((current) => [...current, { id: optimisticId, role: 'user', content: text }]);
+    const now = Date.now();
+    const userPendingId = `pending-user-${now}`;
+    const assistantPendingId = `pending-assistant-${now}`;
+    setMessages((current) => appendPendingExchange(current, {
+      userPendingId,
+      assistantPendingId,
+      question: text,
+    }));
 
     try {
       const activeSessionId = await ensureSession(text);
       const response = await askQuestion({ sessionId: activeSessionId, documentId, question: text });
-      setMessages((current) => [
-        ...current.filter((message) => message.id !== optimisticId),
-        response.user_message,
-        response.assistant_message,
-      ]);
+      setMessages((current) => replacePendingExchange(current, {
+        userPendingId,
+        assistantPendingId,
+        userMessage: response.user_message,
+        assistantMessage: response.assistant_message,
+      }));
     } catch (err) {
-      setMessages((current) => current.filter((message) => message.id !== optimisticId));
+      setMessages((current) => removePendingExchange(current, [userPendingId, assistantPendingId]));
       setError(getErrorMessage(err, 'Failed to send question.'));
     } finally {
       setSending(false);

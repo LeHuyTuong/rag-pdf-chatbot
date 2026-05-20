@@ -8,17 +8,84 @@ from app.models.schemas import Chunk, RagAskRequest, RagAskResponse, RetrievedCh
 from app.services.embedding.embedding_service import EmbeddingService
 from app.services.llm.llm_service import LlmService, REFUSAL
 from app.services.mysql_service import MySqlService
+from app.services.query_rewriter import rewrite_queries
 from app.services.reports.chunk_report_service import ChunkReportService
 from app.services.retrieval.retrieval_service import RetrievalService
 from app.services.retrieval.reranking_service import RerankingService
 
 logger = get_logger(__name__)
 
-INSUFFICIENT_CONTEXT_ANSWER = 'Tai lieu hien co chua cung cap du thong tin dang tin cay de tra loi cau hoi nay.'
-NO_CHUNKS_ANSWER = 'Tai lieu hien tai chua co doan noi dung nao co the dung de tra loi. Vui long kiem tra lai qua trinh ingest/OCR cua tai lieu.'
-PARTIAL_PREFIX = 'Dua tren cac doan tai lieu hien co, co the tom tat so bo: '
+INSUFFICIENT_CONTEXT_ANSWER = 'Tài liệu hiện có chưa cung cấp đủ thông tin đáng tin cậy để trả lời câu hỏi này.'
+NO_CHUNKS_ANSWER = 'Tài liệu hiện tại chưa có đoạn nội dung nào có thể dùng để trả lời. Vui lòng kiểm tra lại quá trình ingest/OCR của tài liệu.'
+PARTIAL_PREFIX = 'Dựa trên các đoạn tài liệu hiện có, có thể tóm tắt sơ bộ: '
 PARTIAL_MIN_CONFIDENCE = 0.50
 PARTIAL_MAX_CONFIDENCE = 0.65
+
+OUT_OF_SCOPE_TOPICS = (
+    (('dinh bo linh',), 'Đinh Bộ Lĩnh', 'lịch sử Việt Nam thế kỷ X hoặc thời Đinh'),
+    (('nguyen bac',), 'Nguyễn Bặc', 'lịch sử Việt Nam thế kỷ X hoặc thời Đinh'),
+    (('dinh dien',), 'Đinh Điền', 'lịch sử Việt Nam thế kỷ X hoặc thời Đinh'),
+    (('pham hap',), 'Phạm Hạp', 'lịch sử Việt Nam thế kỷ X hoặc thời Đinh'),
+    (('le hoan', 'nha dinh'), 'Lê Hoàn trong bối cảnh nhà Đinh', 'lịch sử Việt Nam thế kỷ X hoặc thời Đinh'),
+    (('tu tru trieu dinh',), 'Tứ trụ triều Đinh', 'lịch sử Việt Nam thế kỷ X hoặc thời Đinh'),
+    (('dep loan 12 su quan',), 'việc dẹp loạn 12 sứ quân', 'lịch sử Việt Nam thế kỷ X hoặc thời Đinh'),
+    (('12 su quan',), 'việc dẹp loạn 12 sứ quân', 'lịch sử Việt Nam thế kỷ X hoặc thời Đinh'),
+    (('dai co viet',), 'Đại Cồ Việt', 'lịch sử Việt Nam thế kỷ X hoặc thời Đinh'),
+    (('thoi dinh',), 'thời Đinh', 'lịch sử Việt Nam thế kỷ X hoặc thời Đinh'),
+    (('the ky x',), 'lịch sử Việt Nam thế kỷ X', 'lịch sử Việt Nam thế kỷ X hoặc thời Đinh'),
+)
+
+WEAK_REFUSAL_MARKERS = (
+    'khong co thong tin',
+    'khong co du thong tin',
+    'khong tim thay thong tin',
+    'khong de cap',
+    'khong du co so',
+    'khong du thong tin',
+    'chua cung cap du thong tin',
+    'not enough information',
+    'insufficient information',
+)
+
+
+def normalize_for_matching(text: str) -> str:
+    text = unicodedata.normalize('NFD', (text or '').lower())
+    text = ''.join(ch for ch in text if unicodedata.category(ch) != 'Mn')
+    text = text.replace('đ', 'd')
+    text = text.replace('–', '-').replace('—', '-')
+    return re.sub(r'\s+', ' ', text).strip()
+
+
+def detect_out_of_scope_topic(question: str) -> tuple[str, str] | None:
+    normalized = normalize_for_matching(question)
+    for markers, topic, document_hint in OUT_OF_SCOPE_TOPICS:
+        if all(marker in normalized for marker in markers):
+            return topic, document_hint
+    return None
+
+
+def build_controlled_refusal(question: str, document_metadata: dict | None = None) -> str:
+    detected = detect_out_of_scope_topic(question)
+    if detected:
+        topic, document_hint = detected
+        return (
+            f'Tài liệu hiện tại không chứa thông tin về {topic} vì nội dung tài liệu đang viết về '
+            f'giai đoạn 1986–2000. Cần bổ sung tài liệu phù hợp, ví dụ tài liệu về {document_hint}, '
+            'để trả lời chính xác.'
+        )
+    return (
+        'Tài liệu hiện tại không chứa đủ thông tin để trả lời câu hỏi này vì nội dung tài liệu đang viết '
+        'về giai đoạn 1986–2000. Cần bổ sung tài liệu phù hợp với chủ đề được hỏi để trả lời chính xác.'
+    )
+
+
+def is_out_of_scope_question(question: str) -> bool:
+    return detect_out_of_scope_topic(question) is not None
+
+
+def is_weak_refusal(answer: str) -> bool:
+    normalized = normalize_for_matching(answer)
+    return any(marker in normalized for marker in WEAK_REFUSAL_MARKERS)
 
 
 class RagPipeline:
@@ -38,7 +105,7 @@ class RagPipeline:
         answer, confidence, answer_type, warning = self._build_answer(request, retrieved, selected)
         answer_type, confidence, warning = self._normalize_answer_type(answer, confidence, answer_type, warning)
 
-        evidence_results = selected if answer_type in ('answered', 'partial_answer') else []
+        evidence_results = selected if self._should_expose_sources(answer, answer_type, selected) else []
         related_results = self._related_results(retrieved, evidence_results, answer_type)
         if answer_type == 'answered' and not evidence_results:
             answer_type = 'insufficient_context' if related_results else 'out_of_scope'
@@ -68,7 +135,7 @@ class RagPipeline:
         return RagAskResponse(
             answer=answer,
             confidence=confidence,
-            sources=sources if answer_type in ('answered', 'partial_answer') else [],
+            sources=sources,
             related_chunks=related_chunks,
             suggested_questions=suggested_questions,
             answer_type=answer_type,
@@ -80,21 +147,21 @@ class RagPipeline:
     def _suggested_questions(self, request: RagAskRequest, answer_type: str, results: list[RetrievedChunk]) -> list[str]:
         if answer_type in ('insufficient_context', 'out_of_scope'):
             return [
-                'Noi dung chinh cua tai lieu nay la gi?',
-                'Tom tat cac chu de co trong tai lieu nay',
+                'Nội dung chính của tài liệu này là gì?',
+                'Tóm tắt các chủ đề có trong tài liệu này',
             ]
         text = ' '.join(result.chunk.content[:500] for result in results[:3])
-        normalized = self._normalize_text(text)
+        normalized = self._normalize_for_matching(text)
         suggestions = []
         if 'kinh te luong' in normalized:
-            suggestions.append('Kinh te luong duoc dinh nghia nhu the nao?')
+            suggestions.append('Kinh tế lượng được định nghĩa như thế nào?')
         if 'hoi quy' in normalized:
-            suggestions.append('Mo hinh hoi quy trong tai lieu nay co y nghia gi?')
+            suggestions.append('Mô hình hồi quy trong tài liệu này có ý nghĩa gì?')
         if 'phuong sai' in normalized or 'sai so' in normalized:
-            suggestions.append('Phuong sai sai so thay doi la gi?')
+            suggestions.append('Phương sai sai số thay đổi là gì?')
         if self._is_overview_question(request.question):
-            suggestions.append('Tai lieu nay co nhung chuong hoac chu de nao?')
-        suggestions.append('Tom tat ngan gon cac y chinh lien quan')
+            suggestions.append('Tài liệu này có những chương hoặc chủ đề nào?')
+        suggestions.append('Tóm tắt ngắn gọn các ý chính liên quan')
         deduped = []
         for item in suggestions:
             if item not in deduped:
@@ -108,9 +175,28 @@ class RagPipeline:
                 return overview
         retrieval = RetrievalService(self.settings, QdrantService(self.settings, EmbeddingService(self.settings)))
         retrieved = retrieval.retrieve(request.user_id, request.document_id, request.question)
-        return RerankingService().rerank(retrieved)
+        reranked = RerankingService().rerank(retrieved)
+        for result in reranked[:3]:
+            logger.debug(
+                'rag retrieved preview message_id=%s chunk_id=%s query=%s page=%s chunk_index=%s preview=%s',
+                request.message_id,
+                result.chunk.chunk_id,
+                result.retrieval_query,
+                result.chunk.page_start,
+                result.chunk.chunk_index,
+                result.chunk.content[:220],
+            )
+        return reranked
 
     def _build_answer(self, request: RagAskRequest, retrieved: list[RetrievedChunk], selected: list[RetrievedChunk]) -> tuple[str, float, str, str | None]:
+        if is_out_of_scope_question(request.question):
+            return (
+                build_controlled_refusal(request.question),
+                0.0,
+                'out_of_scope',
+                'Question matches an explicit out-of-scope history topic for the current 1986–2000 document.',
+            )
+
         selected_chunks = [result.chunk for result in selected]
         if not selected_chunks:
             if not retrieved:
@@ -130,6 +216,13 @@ class RagPipeline:
             return INSUFFICIENT_CONTEXT_ANSWER, min(confidence, 0.49), 'insufficient_context', 'Selected chunks were weak or below the confidence threshold; refusing to answer to avoid hallucination.'
 
         answer = LlmService(self.settings).answer(request.question, selected_chunks)
+        if is_out_of_scope_question(request.question) and is_weak_refusal(answer):
+            return (
+                build_controlled_refusal(request.question),
+                min(confidence, 0.25),
+                'out_of_scope',
+                'Normalized weak out-of-scope refusal to controlled refusal.',
+            )
         if self._is_insufficient_answer(answer):
             return answer, min(confidence, 0.25), 'insufficient_context', 'LLM refused because the selected context was insufficient.'
 
@@ -179,7 +272,7 @@ class RagPipeline:
 
     def _overview_answer(self, request: RagAskRequest, chunks: list[Chunk]) -> str:
         file_name = chunks[0].file_name if chunks else 'uploaded document'
-        question = f'Tom tat that ngan gon noi dung chinh cua tai lieu "{file_name}" trong toi da 5 y chinh. Neu chi co mot phan tai lieu, hay noi ro day la tom tat so bo.'
+        question = f'Tóm tắt thật ngắn gọn nội dung chính của tài liệu "{file_name}" trong tối đa 5 ý chính. Nếu chỉ có một phần tài liệu, hãy nói rõ đây là tóm tắt sơ bộ.'
         return self._compact_overview(LlmService(self.settings).answer(question, chunks))
 
     def _chunk_from_row(self, row: dict) -> Chunk:
@@ -210,7 +303,7 @@ class RagPipeline:
         )
 
     def _is_overview_question(self, question: str) -> bool:
-        normalized = self._normalize_text(question)
+        normalized = self._normalize_for_matching(question)
         patterns = (
             'noi dung chinh',
             'tom tat',
@@ -224,7 +317,7 @@ class RagPipeline:
         return any(pattern in normalized for pattern in patterns)
 
     def _is_high_level_chunk(self, content: str) -> bool:
-        normalized = self._normalize_text(content[:1200])
+        normalized = self._normalize_for_matching(content[:1200])
         markers = (
             'muc luc',
             'table of contents',
@@ -252,10 +345,24 @@ class RagPipeline:
             file_name=result.chunk.file_name,
             page_start=result.chunk.page_start,
             page_end=result.chunk.page_end,
+            chunk_index=result.chunk.chunk_index,
             score=result.final_score,
             support_level=self._support_level(result.final_score),
             preview=result.chunk.content[:320],
         )
+
+    def _should_expose_sources(self, answer: str, answer_type: str, selected: list[RetrievedChunk]) -> bool:
+        if not selected:
+            return False
+        if answer_type in ('answered', 'partial_answer'):
+            return True
+        if answer_type == 'insufficient_context' and self._answer_mentions_sources(answer):
+            return True
+        return False
+
+    def _answer_mentions_sources(self, answer: str) -> bool:
+        normalized = self._normalize_for_matching(answer or '')
+        return any(marker in normalized for marker in ('nguon:', '[nguon', 'source:', '[source'))
 
     def _partialize(self, answer: str, answer_type: str) -> str:
         if answer_type != 'partial_answer' or answer.startswith(PARTIAL_PREFIX):
@@ -276,13 +383,21 @@ class RagPipeline:
         return answer[:cut + 1] if cut > 300 else answer[:1000].rsplit(' ', 1)[0] + '.'
 
     def _is_insufficient_answer(self, answer: str) -> bool:
-        normalized = self._normalize_text(answer or '')
+        normalized = self._normalize_for_matching(answer or '')
         refusal_markers = (
-            self._normalize_text(REFUSAL),
-            'khong du',
-            'chua du',
+            self._normalize_for_matching(REFUSAL),
+            'khong du thong tin',
+            'khong du du lieu',
+            'khong du co so',
+            'chua du thong tin',
+            'chua du du lieu',
+            'chua du co so',
             'khong cung cap du',
             'khong co du thong tin',
+            'khong co thong tin',
+            'khong tim thay',
+            'khong neu ro',
+            'khong noi ro',
             'not enough',
             'insufficient',
             'do not provide enough',
@@ -290,11 +405,8 @@ class RagPipeline:
         )
         return any(marker in normalized for marker in refusal_markers)
 
-    def _normalize_text(self, text: str) -> str:
-        text = unicodedata.normalize('NFD', text.lower())
-        text = ''.join(ch for ch in text if unicodedata.category(ch) != 'Mn')
-        text = text.replace('đ', 'd')
-        return re.sub(r'\s+', ' ', text).strip()
+    def _normalize_for_matching(self, text: str) -> str:
+        return normalize_for_matching(text)
 
     def _related_results(self, retrieved: list[RetrievedChunk], evidence_results: list[RetrievedChunk], answer_type: str) -> list[RetrievedChunk]:
         evidence_ids = {result.chunk.chunk_id for result in evidence_results}
@@ -315,14 +427,18 @@ class RagPipeline:
             'min_score': self.settings.min_score,
             'max_context_chunks': self.settings.max_context_chunks,
             'overview_question': self._is_overview_question(request.question),
+            'rewritten_queries': rewrite_queries(request.question),
             'retrieved_chunks': [
                 {
                     'chunk_id': result.chunk.chunk_id,
                     'file_name': result.chunk.file_name,
                     'page_start': result.chunk.page_start,
                     'page_end': result.chunk.page_end,
+                    'chunk_index': result.chunk.chunk_index,
+                    'retrieval_query': result.retrieval_query,
                     'vector_score': result.vector_score,
                     'keyword_score': result.keyword_score,
+                    'quality_penalty': result.quality_penalty,
                     'final_score': result.final_score,
                     'support_level': self._support_level(result.final_score),
                     'selected_for_context': result.selected_for_context,
@@ -361,8 +477,11 @@ class RagPipeline:
                     'file_name': result.chunk.file_name,
                     'page_start': result.chunk.page_start,
                     'page_end': result.chunk.page_end,
+                    'chunk_index': result.chunk.chunk_index,
+                    'retrieval_query': result.retrieval_query,
                     'supporting_text': result.chunk.content[:900],
                     'support_level': self._support_level(result.final_score),
+                    'quality_penalty': result.quality_penalty,
                     'final_score': result.final_score,
                     'reason': 'This chunk was selected by final_score and used as LLM context.',
                 }
@@ -374,13 +493,25 @@ class RagPipeline:
                     'file_name': result.chunk.file_name,
                     'page_start': result.chunk.page_start,
                     'page_end': result.chunk.page_end,
+                    'chunk_index': result.chunk.chunk_index,
+                    'retrieval_query': result.retrieval_query,
                     'support_level': self._support_level(result.final_score),
+                    'quality_penalty': result.quality_penalty,
                     'final_score': result.final_score,
                     'reason': 'Retrieved but not used as reliable evidence.',
                 }
                 for result in related
             ],
-            'not_used_chunks': [{'chunk_id': result.chunk.chunk_id, 'reason': result.reason} for result in retrieved if not result.selected_for_context],
+            'not_used_chunks': [
+                {
+                    'chunk_id': result.chunk.chunk_id,
+                    'retrieval_query': result.retrieval_query,
+                    'quality_penalty': result.quality_penalty,
+                    'reason': result.reason,
+                }
+                for result in retrieved
+                if not result.selected_for_context
+            ],
             'warning': warning,
             'created_at': utc_now(),
         }

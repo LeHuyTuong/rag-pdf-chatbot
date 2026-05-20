@@ -1,0 +1,350 @@
+RAG HISTORY EVALUATION REPORT
+Generated at: 2026-05-20T23:59:13
+RAG_API_URL: from-jsonl
+User ID: from-jsonl
+Document ID: from-jsonl
+Total questions: 10
+
+==================================================
+[E] CĂ¢u há»i báº«y chá»‘ng hallucination
+==================================================
+
+[E01] Äinh Bá»™ LÄ©nh lĂ  ai?
+
+Expected behavior:
+ÄĂ¢y lĂ  nhĂ³m báº«y. Náº¿u há»‡ thá»‘ng chá»‰ cĂ³ tĂ i liá»‡u 1986â€“2000, cĂ¢u tráº£ lá»i tá»‘t pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t, khĂ´ng tráº£ lá»i chi tiáº¿t vá» Äinh Bá»™ LÄ©nh náº¿u khĂ´ng cĂ³ source phĂ¹ há»£p.
+
+Answer:
+TĂ i liá»‡u hiá»‡n táº¡i khĂ´ng chá»©a thĂ´ng tin vá» Äinh Bá»™ LÄ©nh vĂ¬ ná»™i dung tĂ i liá»‡u Ä‘ang viáº¿t vá» giai Ä‘oáº¡n 1986â€“2000. Cáº§n bá»• sung tĂ i liá»‡u phĂ¹ há»£p, vĂ­ dá»¥ tĂ i liá»‡u vá» lá»‹ch sá»­ Viá»‡t Nam tháº¿ ká»· X hoáº·c thá»i Äinh, Ä‘á»ƒ tráº£ lá»i chĂ­nh xĂ¡c.
+
+Sources:
+(none)
+
+Auto checks:
+- has_answer: true
+- has_sources: false
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: true
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: True
+- latency_ms: 5916
+
+Verdict:
+PASS_TRAP_REFUSAL
+
+Notes:
+- No sources returned.
+- Trap appears to use controlled refusal.
+
+--------------------------------------------------
+
+[E02] Äinh Bá»™ LÄ©nh sinh á»Ÿ Ä‘Ă¢u?
+
+Expected behavior:
+ÄĂ¢y lĂ  nhĂ³m báº«y. Náº¿u há»‡ thá»‘ng chá»‰ cĂ³ tĂ i liá»‡u 1986â€“2000, cĂ¢u tráº£ lá»i tá»‘t pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t, khĂ´ng tráº£ lá»i chi tiáº¿t vá» Äinh Bá»™ LÄ©nh náº¿u khĂ´ng cĂ³ source phĂ¹ há»£p.
+
+Answer:
+TĂ i liá»‡u hiá»‡n táº¡i khĂ´ng chá»©a thĂ´ng tin vá» Äinh Bá»™ LÄ©nh vĂ¬ ná»™i dung tĂ i liá»‡u Ä‘ang viáº¿t vá» giai Ä‘oáº¡n 1986â€“2000. Cáº§n bá»• sung tĂ i liá»‡u phĂ¹ há»£p, vĂ­ dá»¥ tĂ i liá»‡u vá» lá»‹ch sá»­ Viá»‡t Nam tháº¿ ká»· X hoáº·c thá»i Äinh, Ä‘á»ƒ tráº£ lá»i chĂ­nh xĂ¡c.
+
+Sources:
+(none)
+
+Auto checks:
+- has_answer: true
+- has_sources: false
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: true
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: True
+- latency_ms: 5967
+
+Verdict:
+PASS_TRAP_REFUSAL
+
+Notes:
+- No sources returned.
+- Trap appears to use controlled refusal.
+
+--------------------------------------------------
+
+[E03] DÆ°á»›i trÆ°á»›ng Äinh Bá»™ LÄ©nh cĂ³ nhá»¯ng tÆ°á»›ng nĂ o?
+
+Expected behavior:
+ÄĂ¢y lĂ  nhĂ³m báº«y. Náº¿u há»‡ thá»‘ng chá»‰ cĂ³ tĂ i liá»‡u 1986â€“2000, cĂ¢u tráº£ lá»i tá»‘t pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t, khĂ´ng tráº£ lá»i chi tiáº¿t vá» Äinh Bá»™ LÄ©nh náº¿u khĂ´ng cĂ³ source phĂ¹ há»£p.
+
+Answer:
+TĂ i liá»‡u hiá»‡n táº¡i khĂ´ng chá»©a thĂ´ng tin vá» Äinh Bá»™ LÄ©nh vĂ¬ ná»™i dung tĂ i liá»‡u Ä‘ang viáº¿t vá» giai Ä‘oáº¡n 1986â€“2000. Cáº§n bá»• sung tĂ i liá»‡u phĂ¹ há»£p, vĂ­ dá»¥ tĂ i liá»‡u vá» lá»‹ch sá»­ Viá»‡t Nam tháº¿ ká»· X hoáº·c thá»i Äinh, Ä‘á»ƒ tráº£ lá»i chĂ­nh xĂ¡c.
+
+Sources:
+(none)
+
+Auto checks:
+- has_answer: true
+- has_sources: false
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: true
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: True
+- latency_ms: 6065
+
+Verdict:
+PASS_TRAP_REFUSAL
+
+Notes:
+- No sources returned.
+- Trap appears to use controlled refusal.
+
+--------------------------------------------------
+
+[E04] Nguyá»…n Báº·c lĂ  ai vĂ  quĂª á»Ÿ Ä‘Ă¢u?
+
+Expected behavior:
+ÄĂ¢y lĂ  nhĂ³m báº«y. Náº¿u há»‡ thá»‘ng chá»‰ cĂ³ tĂ i liá»‡u 1986â€“2000, cĂ¢u tráº£ lá»i tá»‘t pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t, khĂ´ng tráº£ lá»i chi tiáº¿t vá» Äinh Bá»™ LÄ©nh náº¿u khĂ´ng cĂ³ source phĂ¹ há»£p.
+
+Answer:
+TĂ i liá»‡u hiá»‡n táº¡i khĂ´ng chá»©a thĂ´ng tin vá» Nguyá»…n Báº·c vĂ¬ ná»™i dung tĂ i liá»‡u Ä‘ang viáº¿t vá» giai Ä‘oáº¡n 1986â€“2000. Cáº§n bá»• sung tĂ i liá»‡u phĂ¹ há»£p, vĂ­ dá»¥ tĂ i liá»‡u vá» lá»‹ch sá»­ Viá»‡t Nam tháº¿ ká»· X hoáº·c thá»i Äinh, Ä‘á»ƒ tráº£ lá»i chĂ­nh xĂ¡c.
+
+Sources:
+(none)
+
+Auto checks:
+- has_answer: true
+- has_sources: false
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: true
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: True
+- latency_ms: 6026
+
+Verdict:
+PASS_TRAP_REFUSAL
+
+Notes:
+- No sources returned.
+- Trap appears to use controlled refusal.
+
+--------------------------------------------------
+
+[E05] Äinh Äiá»n lĂ  ai vĂ  cĂ³ vai trĂ² gĂ¬ trong triá»u Äinh?
+
+Expected behavior:
+ÄĂ¢y lĂ  nhĂ³m báº«y. Náº¿u há»‡ thá»‘ng chá»‰ cĂ³ tĂ i liá»‡u 1986â€“2000, cĂ¢u tráº£ lá»i tá»‘t pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t, khĂ´ng tráº£ lá»i chi tiáº¿t vá» Äinh Bá»™ LÄ©nh náº¿u khĂ´ng cĂ³ source phĂ¹ há»£p.
+
+Answer:
+TĂ i liá»‡u hiá»‡n táº¡i khĂ´ng chá»©a thĂ´ng tin vá» Äinh Äiá»n vĂ¬ ná»™i dung tĂ i liá»‡u Ä‘ang viáº¿t vá» giai Ä‘oáº¡n 1986â€“2000. Cáº§n bá»• sung tĂ i liá»‡u phĂ¹ há»£p, vĂ­ dá»¥ tĂ i liá»‡u vá» lá»‹ch sá»­ Viá»‡t Nam tháº¿ ká»· X hoáº·c thá»i Äinh, Ä‘á»ƒ tráº£ lá»i chĂ­nh xĂ¡c.
+
+Sources:
+(none)
+
+Auto checks:
+- has_answer: true
+- has_sources: false
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: true
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: True
+- latency_ms: 6069
+
+Verdict:
+PASS_TRAP_REFUSAL
+
+Notes:
+- No sources returned.
+- Trap appears to use controlled refusal.
+
+--------------------------------------------------
+
+[E06] LĂª HoĂ n cĂ³ quan há»‡ nhÆ° tháº¿ nĂ o vá»›i nhĂ  Äinh?
+
+Expected behavior:
+ÄĂ¢y lĂ  nhĂ³m báº«y. Náº¿u há»‡ thá»‘ng chá»‰ cĂ³ tĂ i liá»‡u 1986â€“2000, cĂ¢u tráº£ lá»i tá»‘t pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t, khĂ´ng tráº£ lá»i chi tiáº¿t vá» Äinh Bá»™ LÄ©nh náº¿u khĂ´ng cĂ³ source phĂ¹ há»£p.
+
+Answer:
+TĂ i liá»‡u hiá»‡n táº¡i khĂ´ng chá»©a thĂ´ng tin vá» LĂª HoĂ n trong bá»‘i cáº£nh nhĂ  Äinh vĂ¬ ná»™i dung tĂ i liá»‡u Ä‘ang viáº¿t vá» giai Ä‘oáº¡n 1986â€“2000. Cáº§n bá»• sung tĂ i liá»‡u phĂ¹ há»£p, vĂ­ dá»¥ tĂ i liá»‡u vá» lá»‹ch sá»­ Viá»‡t Nam tháº¿ ká»· X hoáº·c thá»i Äinh, Ä‘á»ƒ tráº£ lá»i chĂ­nh xĂ¡c.
+
+Sources:
+(none)
+
+Auto checks:
+- has_answer: true
+- has_sources: false
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: true
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: True
+- latency_ms: 5943
+
+Verdict:
+PASS_TRAP_REFUSAL
+
+Notes:
+- No sources returned.
+- Trap appears to use controlled refusal.
+
+--------------------------------------------------
+
+[E07] Pháº¡m Háº¡p lĂ  ai trong thá»i Äinh?
+
+Expected behavior:
+ÄĂ¢y lĂ  nhĂ³m báº«y. Náº¿u há»‡ thá»‘ng chá»‰ cĂ³ tĂ i liá»‡u 1986â€“2000, cĂ¢u tráº£ lá»i tá»‘t pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t, khĂ´ng tráº£ lá»i chi tiáº¿t vá» Äinh Bá»™ LÄ©nh náº¿u khĂ´ng cĂ³ source phĂ¹ há»£p.
+
+Answer:
+TĂ i liá»‡u hiá»‡n táº¡i khĂ´ng chá»©a thĂ´ng tin vá» Pháº¡m Háº¡p vĂ¬ ná»™i dung tĂ i liá»‡u Ä‘ang viáº¿t vá» giai Ä‘oáº¡n 1986â€“2000. Cáº§n bá»• sung tĂ i liá»‡u phĂ¹ há»£p, vĂ­ dá»¥ tĂ i liá»‡u vá» lá»‹ch sá»­ Viá»‡t Nam tháº¿ ká»· X hoáº·c thá»i Äinh, Ä‘á»ƒ tráº£ lá»i chĂ­nh xĂ¡c.
+
+Sources:
+(none)
+
+Auto checks:
+- has_answer: true
+- has_sources: false
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: true
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: True
+- latency_ms: 5920
+
+Verdict:
+PASS_TRAP_REFUSAL
+
+Notes:
+- No sources returned.
+- Trap appears to use controlled refusal.
+
+--------------------------------------------------
+
+[E08] Tá»© trá»¥ triá»u Äinh gá»“m nhá»¯ng ai?
+
+Expected behavior:
+ÄĂ¢y lĂ  nhĂ³m báº«y. Náº¿u há»‡ thá»‘ng chá»‰ cĂ³ tĂ i liá»‡u 1986â€“2000, cĂ¢u tráº£ lá»i tá»‘t pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t, khĂ´ng tráº£ lá»i chi tiáº¿t vá» Äinh Bá»™ LÄ©nh náº¿u khĂ´ng cĂ³ source phĂ¹ há»£p.
+
+Answer:
+TĂ i liá»‡u hiá»‡n táº¡i khĂ´ng chá»©a thĂ´ng tin vá» Tá»© trá»¥ triá»u Äinh vĂ¬ ná»™i dung tĂ i liá»‡u Ä‘ang viáº¿t vá» giai Ä‘oáº¡n 1986â€“2000. Cáº§n bá»• sung tĂ i liá»‡u phĂ¹ há»£p, vĂ­ dá»¥ tĂ i liá»‡u vá» lá»‹ch sá»­ Viá»‡t Nam tháº¿ ká»· X hoáº·c thá»i Äinh, Ä‘á»ƒ tráº£ lá»i chĂ­nh xĂ¡c.
+
+Sources:
+(none)
+
+Auto checks:
+- has_answer: true
+- has_sources: false
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: true
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: True
+- latency_ms: 5896
+
+Verdict:
+PASS_TRAP_REFUSAL
+
+Notes:
+- No sources returned.
+- Trap appears to use controlled refusal.
+
+--------------------------------------------------
+
+[E09] Äinh Bá»™ LÄ©nh dáº¹p loáº¡n 12 sá»© quĂ¢n nhÆ° tháº¿ nĂ o?
+
+Expected behavior:
+ÄĂ¢y lĂ  nhĂ³m báº«y. Náº¿u há»‡ thá»‘ng chá»‰ cĂ³ tĂ i liá»‡u 1986â€“2000, cĂ¢u tráº£ lá»i tá»‘t pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t, khĂ´ng tráº£ lá»i chi tiáº¿t vá» Äinh Bá»™ LÄ©nh náº¿u khĂ´ng cĂ³ source phĂ¹ há»£p.
+
+Answer:
+TĂ i liá»‡u hiá»‡n táº¡i khĂ´ng chá»©a thĂ´ng tin vá» Äinh Bá»™ LÄ©nh vĂ¬ ná»™i dung tĂ i liá»‡u Ä‘ang viáº¿t vá» giai Ä‘oáº¡n 1986â€“2000. Cáº§n bá»• sung tĂ i liá»‡u phĂ¹ há»£p, vĂ­ dá»¥ tĂ i liá»‡u vá» lá»‹ch sá»­ Viá»‡t Nam tháº¿ ká»· X hoáº·c thá»i Äinh, Ä‘á»ƒ tráº£ lá»i chĂ­nh xĂ¡c.
+
+Sources:
+(none)
+
+Auto checks:
+- has_answer: true
+- has_sources: false
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: true
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: True
+- latency_ms: 6008
+
+Verdict:
+PASS_TRAP_REFUSAL
+
+Notes:
+- No sources returned.
+- Trap appears to use controlled refusal.
+
+--------------------------------------------------
+
+[E10] Sau khi thá»‘ng nháº¥t Ä‘áº¥t nÆ°á»›c, Äinh Bá»™ LÄ©nh Ä‘áº·t quá»‘c hiá»‡u lĂ  gĂ¬?
+
+Expected behavior:
+ÄĂ¢y lĂ  nhĂ³m báº«y. Náº¿u há»‡ thá»‘ng chá»‰ cĂ³ tĂ i liá»‡u 1986â€“2000, cĂ¢u tráº£ lá»i tá»‘t pháº£i tá»« chá»‘i cĂ³ kiá»ƒm soĂ¡t, khĂ´ng tráº£ lá»i chi tiáº¿t vá» Äinh Bá»™ LÄ©nh náº¿u khĂ´ng cĂ³ source phĂ¹ há»£p.
+
+Answer:
+TĂ i liá»‡u hiá»‡n táº¡i khĂ´ng chá»©a thĂ´ng tin vá» Äinh Bá»™ LÄ©nh vĂ¬ ná»™i dung tĂ i liá»‡u Ä‘ang viáº¿t vá» giai Ä‘oáº¡n 1986â€“2000. Cáº§n bá»• sung tĂ i liá»‡u phĂ¹ há»£p, vĂ­ dá»¥ tĂ i liá»‡u vá» lá»‹ch sá»­ Viá»‡t Nam tháº¿ ká»· X hoáº·c thá»i Äinh, Ä‘á»ƒ tráº£ lá»i chĂ­nh xĂ¡c.
+
+Sources:
+(none)
+
+Auto checks:
+- has_answer: true
+- has_sources: false
+- source_mapping_issue: false
+- vietnamese_diacritics_ok: true
+- old_non_diacritic_phrase: false
+- trap_question: true
+- controlled_refusal: true
+- weak_refusal: false
+- true_hallucination: false
+- hallucination_risk: false
+- trap_passed: True
+- latency_ms: 6414
+
+Verdict:
+PASS_TRAP_REFUSAL
+
+Notes:
+- No sources returned.
+- Trap appears to use controlled refusal.
+
+--------------------------------------------------

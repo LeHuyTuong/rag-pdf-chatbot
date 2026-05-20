@@ -53,10 +53,11 @@ function SourceList({ title, sources, isUser, answerType }) {
       </div>
       <div className="grid gap-2">
         {sources.map((source, index) => (
-          <div key={`${source.chunk_id || title}-${index}`} className={`rounded-lg border p-3 text-xs ${isUser ? 'border-white/15 bg-white/10 text-blue-50' : 'border-slate-100 bg-slate-50 text-slate-600'}`}>
+          <div key={`${source.chunk_id || source.chunkId || title}-${index}`} className={`rounded-lg border p-3 text-xs ${isUser ? 'border-white/15 bg-white/10 text-blue-50' : 'border-slate-100 bg-slate-50 text-slate-600'}`}>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              <span className={`font-semibold ${isUser ? 'text-white' : 'text-slate-700'}`}>{source.file_name || 'Unknown file'}</span>
-              <span>p. {source.page_start ?? '?'}-{source.page_end ?? source.page_start ?? '?'}</span>
+              <span className={`font-semibold ${isUser ? 'text-white' : 'text-slate-700'}`}>{source.file_name || source.fileName || 'Unknown file'}</span>
+              <span>p. {source.page_start ?? source.pageNumber ?? '?'}-{source.page_end ?? source.page_start ?? source.pageNumber ?? '?'}</span>
+              {(source.chunk_index ?? source.chunkIndex) !== undefined && <span>chunk {source.chunk_index ?? source.chunkIndex}</span>}
               <span>score {formatScore(source.score)}</span>
               <span className={`rounded px-1.5 py-0.5 font-medium ${partial ? 'bg-blue-100 text-blue-700' : supportClass(source.support_level)}`}>
                 {partial ? 'medium confidence' : (source.support_level || 'medium')}
@@ -86,7 +87,7 @@ function SourceCards({ payload, rawJson, isUser, debugMode }) {
     <div className="px-4 pb-3 space-y-2">
       {insufficient || outOfScope ? (
         <div className={`rounded-lg border px-3 py-2 text-xs ${isUser ? 'border-white/15 bg-white/10 text-blue-50' : 'border-amber-100 bg-amber-50 text-amber-800'}`}>
-          {outOfScope ? 'The question appears to be outside the current documents.' : 'No reliable source found in the current documents.'}
+          {outOfScope ? 'Câu hỏi có vẻ nằm ngoài phạm vi tài liệu hiện tại.' : 'Không tìm thấy nguồn đủ tin cậy trong tài liệu hiện tại.'}
         </div>
       ) : (
         <SourceList title={partial ? 'Sources (medium confidence)' : 'Sources'} sources={sources} isUser={isUser} answerType={answerType} />
@@ -159,7 +160,7 @@ export default function ChatMessageItem({ message, onOpenReport, onSuggestedQues
         </div>
         <SourceCards payload={payload} rawJson={message.sourcesJson} isUser={isUser} debugMode={debugMode} />
         <SuggestedQuestions questions={payload.suggestedQuestions} isUser={isUser} onSelect={onSuggestedQuestion} />
-        {message.id && message.role === 'assistant' && (
+        {message.id && message.role === 'assistant' && !message.loading && (
           <div className="px-4 pb-3 flex gap-2 justify-start">
             <button onClick={() => onOpenReport(message.id, 'retrieval')} className="text-[11px] px-2.5 py-1 rounded-lg font-medium transition-all bg-slate-100 text-slate-500 hover:bg-slate-200">
               Retrieval

@@ -85,7 +85,7 @@ public class ChatService {
 
 	public List<ChatMessageResponse> messages(UUID sessionId) {
 		findOwnedSession(sessionId);
-		return messages.findBySessionIdOrderByCreatedAt(sessionId).stream().map(mapper::toMessageResponse).toList();
+		return messages.findBySessionIdOrderByCreatedAtAsc(sessionId).stream().map(mapper::toMessageResponse).toList();
 	}
 
 	public ChatAskResponse ask(AskQuestionRequest request) {

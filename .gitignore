@@ -23,6 +23,13 @@ backend-spring/target/
 /logs/
 **/logs/
 *.log
+rag-api/storage/*
+!rag-api/storage/eval/
+rag-api/storage/eval/*
+!rag-api/storage/eval/rag_eval_history_pre-graphdb-quick.csv
+!rag-api/storage/eval/rag_eval_history_pre-graphdb-quick.txt
+!rag-api/storage/eval/rag_eval_history_pre-graphdb-trap.csv
+!rag-api/storage/eval/rag_eval_history_pre-graphdb-trap.txt
 
 # Local tools
 .tools/
