@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ChatInput from './ChatInput';
 import ChatMessageList from './ChatMessageList';
 import ErrorState from '../../../shared/components/ErrorState';
 
-export default function ChatBox({ selectedDocument, messages, sending, question, setQuestion, error, onAsk, onClear, onOpenReport }) {
+export default function ChatBox({ selectedDocument, messages, sending, loadingMessages, question, setQuestion, error, onAsk, onClear, onOpenReport }) {
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+  const [debugMode, setDebugMode] = useState(false);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -19,7 +20,18 @@ export default function ChatBox({ selectedDocument, messages, sending, question,
 
   return (
     <section className="flex-1 flex flex-col bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden min-h-[30rem]">
-      <ChatMessageList messages={messages} sending={sending} onOpenReport={onOpenReport}>
+      <div className="flex items-center justify-end gap-2 border-b border-slate-100 px-4 py-2">
+        <label className="flex items-center gap-2 text-xs font-medium text-slate-500">
+          <input
+            type="checkbox"
+            checked={debugMode}
+            onChange={(event) => setDebugMode(event.target.checked)}
+            className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+          />
+          Debug Mode
+        </label>
+      </div>
+      <ChatMessageList messages={messages} sending={sending || loadingMessages} onOpenReport={onOpenReport} onSuggestedQuestion={onAsk} debugMode={debugMode}>
         {!selectedDocument && (
           <div className="flex flex-col items-center justify-center h-full min-h-80 text-center">
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center mb-4 text-blue-500 font-semibold">

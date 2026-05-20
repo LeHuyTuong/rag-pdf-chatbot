@@ -10,6 +10,16 @@ export async function createChatSession(payload) {
   return response.data;
 }
 
+export async function getActiveChatSession(documentId) {
+  const response = await httpClient.get('/api/chat/sessions/active', { params: { documentId } });
+  return response.data;
+}
+
+export async function getChatMessages(sessionId) {
+  const response = await httpClient.get(`/api/chat/sessions/${sessionId}/messages`);
+  return response.data;
+}
+
 export async function askQuestion(payload) {
   const response = await httpClient.post('/api/chat/ask', payload);
   return response.data;

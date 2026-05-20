@@ -73,6 +73,9 @@ class MySqlService:
             content text,
             confidence decimal(18, 6),
             sources_json text,
+            related_chunks_json text,
+            suggested_questions_json text,
+            answer_type varchar(64),
             retrieval_report_path varchar(1024),
             answer_report_path varchar(1024),
             created_at datetime
@@ -102,6 +105,15 @@ class MySqlService:
                     cur.execute('alter table document_chunks add column file_name varchar(255) null after user_id')
                 except Exception:
                     pass
+                for statement in [
+                    'alter table chat_messages add column related_chunks_json text null after sources_json',
+                    'alter table chat_messages add column suggested_questions_json text null after related_chunks_json',
+                    'alter table chat_messages add column answer_type varchar(64) null after suggested_questions_json',
+                ]:
+                    try:
+                        cur.execute(statement)
+                    except Exception:
+                        pass
 
     def save_chunks(self, chunks: list[Chunk]) -> None:
         if not chunks:

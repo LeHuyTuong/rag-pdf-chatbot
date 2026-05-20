@@ -13,6 +13,9 @@ public record ChatMessageResponse(
 		String content,
 		BigDecimal confidence,
 		String sourcesJson,
+		String relatedChunksJson,
+		String suggestedQuestionsJson,
+		String answerType,
 		String retrievalReportPath,
 		String answerReportPath,
 		Instant createdAt

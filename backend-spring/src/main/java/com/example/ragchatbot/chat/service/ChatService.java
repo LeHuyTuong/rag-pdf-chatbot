@@ -17,7 +17,9 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
@@ -69,6 +71,14 @@ public class ChatService {
 		return mapper.toSessionResponse(sessions.save(session));
 	}
 
+	public ChatSessionResponse activeSession(UUID documentId) {
+		UUID userId = currentUser.currentUserId();
+		ensureOwnedDocument(documentId, userId);
+		return sessions.findFirstByUserIdAndDocumentIdOrderByUpdatedAtDesc(userId, documentId)
+				.map(mapper::toSessionResponse)
+				.orElseGet(() -> createSession(new CreateChatSessionRequest(documentId, "New chat")));
+	}
+
 	public List<ChatSessionResponse> listSessions() {
 		return sessions.findByUserIdOrderByUpdatedAtDesc(currentUser.currentUserId()).stream().map(mapper::toSessionResponse).toList();
 	}
@@ -107,7 +117,10 @@ public class ChatService {
 
 		assistantMessage.content = ragResponse == null ? "" : ragResponse.answer();
 		assistantMessage.confidence = BigDecimal.valueOf(ragResponse == null || ragResponse.confidence() == null ? 0 : ragResponse.confidence());
-		assistantMessage.sourcesJson = toJson(ragResponse == null ? null : ragResponse.sources());
+		assistantMessage.sourcesJson = toJson(sourcePayload(ragResponse));
+		assistantMessage.relatedChunksJson = toJson(ragResponse == null ? null : ragResponse.relatedChunks());
+		assistantMessage.suggestedQuestionsJson = toJson(ragResponse == null ? null : ragResponse.suggestedQuestions());
+		assistantMessage.answerType = ragResponse == null ? null : ragResponse.answerType();
 		assistantMessage.retrievalReportPath = ragResponse == null ? null : ragResponse.retrievalReportPath();
 		assistantMessage.answerReportPath = ragResponse == null ? null : ragResponse.answerReportPath();
 		messages.save(assistantMessage);
@@ -134,5 +147,18 @@ public class ChatService {
 		} catch (JsonProcessingException error) {
 			return String.valueOf(value);
 		}
+	}
+
+	private Map<String, Object> sourcePayload(RagChatResponse response) {
+		if (response == null) {
+			return null;
+		}
+		Map<String, Object> payload = new LinkedHashMap<>();
+		payload.put("sources", response.sources());
+		payload.put("related_chunks", response.relatedChunks());
+		payload.put("suggested_questions", response.suggestedQuestions());
+		payload.put("confidence", response.confidence());
+		payload.put("answer_type", response.answerType());
+		return payload;
 	}
 }

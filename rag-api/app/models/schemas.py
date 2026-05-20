@@ -67,6 +67,9 @@ class RagAskResponse(BaseModel):
     answer: str
     confidence: float
     sources: list[Source]
+    related_chunks: list[Source] = Field(default_factory=list)
+    suggested_questions: list[str] = Field(default_factory=list)
+    answer_type: str = 'answered'
     warning: str | None = None
     retrieval_report_path: str
     answer_report_path: str

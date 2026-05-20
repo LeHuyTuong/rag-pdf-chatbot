@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import useDocuments from '../../documents/hooks/useDocuments';
 import useChat from '../hooks/useChat';
@@ -10,12 +10,24 @@ import LoadingSpinner from '../../../shared/components/LoadingSpinner';
 
 export default function ChatPage() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const selectedDocumentId = searchParams.get('docId') || '';
+  const selectedDocumentId = searchParams.get('docId') || localStorage.getItem('activeDocumentId') || '';
   const { documents, error: documentsError, loading } = useDocuments();
   const chat = useChat(selectedDocumentId);
   const selectedDocument = documents.find((document) => document.id === selectedDocumentId);
 
+  useEffect(() => {
+    if (selectedDocumentId && searchParams.get('docId') !== selectedDocumentId) {
+      setSearchParams({ docId: selectedDocumentId });
+    }
+  }, [selectedDocumentId, searchParams, setSearchParams]);
+
   function selectDocument(documentId) {
+    if (documentId) {
+      localStorage.setItem('activeDocumentId', documentId);
+    } else {
+      localStorage.removeItem('activeDocumentId');
+      localStorage.removeItem('activeChatSessionId');
+    }
     setSearchParams(documentId ? { docId: documentId } : {});
     chat.newChat();
   }
@@ -51,6 +63,7 @@ export default function ChatPage() {
           selectedDocument={selectedDocument}
           messages={chat.messages}
           sending={chat.sending}
+          loadingMessages={chat.loadingMessages}
           question={chat.question}
           setQuestion={chat.setQuestion}
           error={chat.error}

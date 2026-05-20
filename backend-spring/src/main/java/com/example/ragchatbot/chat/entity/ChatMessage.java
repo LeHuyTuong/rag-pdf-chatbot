@@ -27,6 +27,14 @@ public class ChatMessage {
 	@Column(columnDefinition = "TEXT")
 	public String sourcesJson;
 
+	@Column(columnDefinition = "TEXT")
+	public String relatedChunksJson;
+
+	@Column(columnDefinition = "TEXT")
+	public String suggestedQuestionsJson;
+
+	public String answerType;
+
 	public String retrievalReportPath;
 	public String answerReportPath;
 	public Instant createdAt = Instant.now();

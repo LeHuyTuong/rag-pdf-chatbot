@@ -22,6 +22,9 @@ public class ChatMapper {
 				message.content,
 				message.confidence,
 				message.sourcesJson,
+				message.relatedChunksJson,
+				message.suggestedQuestionsJson,
+				message.answerType,
 				message.retrievalReportPath,
 				message.answerReportPath,
 				message.createdAt
