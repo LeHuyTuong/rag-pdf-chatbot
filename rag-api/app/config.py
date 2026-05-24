@@ -16,6 +16,11 @@ class Settings(BaseSettings):
     qdrant_collection: str = Field('rag_chunks', alias='QDRANT_COLLECTION')
     qdrant_api_key: str | None = Field(None, alias='QDRANT_API_KEY')
     qdrant_local_path: str | None = Field(None, alias='QDRANT_LOCAL_PATH')
+    neo4j_uri: str | None = Field(None, alias='NEO4J_URI')
+    neo4j_username: str | None = Field(None, alias='NEO4J_USERNAME')
+    neo4j_user: str | None = Field(None, alias='NEO4J_USER')
+    neo4j_password: str | None = Field(None, alias='NEO4J_PASSWORD')
+    neo4j_database: str = Field('neo4j', alias='NEO4J_DATABASE')
     embedding_model: str = Field('sentence-transformers/all-MiniLM-L6-v2', alias='EMBEDDING_MODEL')
     embedding_dimension: int = Field(384, alias='EMBEDDING_DIMENSION')
     chunk_size: int = Field(700, alias='CHUNK_SIZE')
@@ -43,6 +48,13 @@ class Settings(BaseSettings):
             'password': self.db_password,
             'database': self.db_database,
         }
+
+    @property
+    def neo4j_auth(self) -> tuple[str, str] | None:
+        username = self.neo4j_username or self.neo4j_user
+        if not username or not self.neo4j_password:
+            return None
+        return username, self.neo4j_password
 
 
 @lru_cache

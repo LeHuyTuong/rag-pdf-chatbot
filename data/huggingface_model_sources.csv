@@ -1,0 +1,31 @@
+source_type,model_id,url,matched_query,last_modified
+supporting model card,BAAI/bge-m3,https://huggingface.co/BAAI/bge-m3,BGE-M3,2024-07-03T14:50:10.000Z
+supporting model card,BAAI/bge-reranker-v2-m3,https://huggingface.co/BAAI/bge-reranker-v2-m3,BGE-M3,2024-06-24T14:08:45.000Z
+supporting model card,gpustack/bge-m3-GGUF,https://huggingface.co/gpustack/bge-m3-GGUF,BGE-M3,2024-10-31T08:31:47.000Z
+supporting model card,naver/xprovence-reranker-bgem3-v1,https://huggingface.co/naver/xprovence-reranker-bgem3-v1,BGE-M3,2026-03-09T08:45:29.000Z
+supporting model card,Xenova/bge-m3,https://huggingface.co/Xenova/bge-m3,BGE-M3,2026-02-10T19:47:18.000Z
+supporting model card,gpustack/bge-reranker-v2-m3-GGUF,https://huggingface.co/gpustack/bge-reranker-v2-m3-GGUF,BGE-M3,2024-09-29T07:18:36.000Z
+supporting model card,gpahal/bge-m3-onnx-int8,https://huggingface.co/gpahal/bge-m3-onnx-int8,BGE-M3,2025-06-25T08:23:32.000Z
+supporting model card,hamtaai/bge-m3-hadith,https://huggingface.co/hamtaai/bge-m3-hadith,BGE-M3,2025-09-26T07:54:30.000Z
+supporting model card,ggml-org/bge-m3-Q8_0-GGUF,https://huggingface.co/ggml-org/bge-m3-Q8_0-GGUF,BGE-M3,2025-10-12T12:27:15.000Z
+supporting model card,RookieHX/bge_m3e_stella,https://huggingface.co/RookieHX/bge_m3e_stella,BGE-M3,2023-12-22T14:41:08.000Z
+supporting model card,intfloat/multilingual-e5-small,https://huggingface.co/intfloat/multilingual-e5-small,multilingual-e5,2026-04-02T02:16:05.000Z
+supporting model card,intfloat/multilingual-e5-large,https://huggingface.co/intfloat/multilingual-e5-large,multilingual-e5,2026-04-02T02:16:59.000Z
+supporting model card,intfloat/multilingual-e5-base,https://huggingface.co/intfloat/multilingual-e5-base,multilingual-e5,2026-04-02T02:13:31.000Z
+supporting model card,dragonkue/multilingual-e5-small-ko-v2,https://huggingface.co/dragonkue/multilingual-e5-small-ko-v2,multilingual-e5,2025-10-16T10:11:12.000Z
+supporting model card,tamikisg/multilingual-e5-small-coreml,https://huggingface.co/tamikisg/multilingual-e5-small-coreml,multilingual-e5,2026-02-09T07:04:07.000Z
+supporting model card,embaas/sentence-transformers-multilingual-e5-base,https://huggingface.co/embaas/sentence-transformers-multilingual-e5-base,multilingual-e5,2023-06-03T17:53:45.000Z
+supporting model card,efederici/e5-base-multilingual-4096,https://huggingface.co/efederici/e5-base-multilingual-4096,multilingual-e5,2023-08-07T16:18:50.000Z
+supporting model card,efederici/e5-multilingual-base-int8-dynamic,https://huggingface.co/efederici/e5-multilingual-base-int8-dynamic,multilingual-e5,2023-08-07T16:19:33.000Z
+supporting model card,mjwong/multilingual-e5-base-xnli,https://huggingface.co/mjwong/multilingual-e5-base-xnli,multilingual-e5,2024-07-07T06:38:03.000Z
+supporting model card,CeroShrijver/multilingual-e5-base-ling-cls,https://huggingface.co/CeroShrijver/multilingual-e5-base-ling-cls,multilingual-e5,2023-06-23T18:42:12.000Z
+supporting model card,AITeamVN/Vietnamese_Embedding,https://huggingface.co/AITeamVN/Vietnamese_Embedding,Vietnamese embedding,2025-08-25T13:32:21.000Z
+supporting model card,NtDNlp/sentence-embedding-vietnamese,https://huggingface.co/NtDNlp/sentence-embedding-vietnamese,Vietnamese embedding,2021-05-27T08:51:12.000Z
+supporting model card,CaoHaiNam/vietnamese-address-embedding,https://huggingface.co/CaoHaiNam/vietnamese-address-embedding,Vietnamese embedding,2024-05-19T17:14:05.000Z
+supporting model card,SCM-LAB/vietnamese_word_embedding_5000,https://huggingface.co/SCM-LAB/vietnamese_word_embedding_5000,Vietnamese embedding,2023-04-15T06:44:45.000Z
+supporting model card,dangvantuan/vietnamese-embedding,https://huggingface.co/dangvantuan/vietnamese-embedding,Vietnamese embedding,2025-10-23T11:28:46.000Z
+supporting model card,itdainb/vietnamese-embedding-onnx,https://huggingface.co/itdainb/vietnamese-embedding-onnx,Vietnamese embedding,2024-05-26T08:11:24.000Z
+supporting model card,kien-vu-uet/vietnamese-embedding-folk,https://huggingface.co/kien-vu-uet/vietnamese-embedding-folk,Vietnamese embedding,2024-05-05T19:12:55.000Z
+supporting model card,dangvantuan/vietnamese-document-embedding,https://huggingface.co/dangvantuan/vietnamese-document-embedding,Vietnamese embedding,2024-11-22T13:56:46.000Z
+supporting model card,hoanganhpham/gemma-2-9b-embedding-vietnamese-gguf-4bit,https://huggingface.co/hoanganhpham/gemma-2-9b-embedding-vietnamese-gguf-4bit,Vietnamese embedding,2025-01-18T07:03:35.000Z
+supporting model card,thaile1809/Vietnamese_Embedding_fast,https://huggingface.co/thaile1809/Vietnamese_Embedding_fast,Vietnamese embedding,2025-03-31T11:19:41.000Z

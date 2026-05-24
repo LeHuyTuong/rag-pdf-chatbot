@@ -1,0 +1,110 @@
+searched_at_utc,source_database,search_string,records_returned,status,from_cache
+2026-05-24T14:15:11.863109+00:00,Semantic Scholar,"(""Vietnamese"" AND ""text embedding"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:11.864127+00:00,Semantic Scholar,"(""Vietnamese"" AND ""semantic search"" AND ""embedding"")",10,ok,True
+2026-05-24T14:15:11.865445+00:00,Semantic Scholar,"(""Vietnamese"" AND ""information retrieval"" AND ""neural retrieval"")",10,ok,True
+2026-05-24T14:15:11.866243+00:00,Semantic Scholar,"(""Vietnamese"" AND ""sentence embedding"" AND ""PhoBERT"")",10,ok,True
+2026-05-24T14:15:11.867021+00:00,Semantic Scholar,"(""Vietnamese"" AND ""SBERT"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:11.867796+00:00,Semantic Scholar,"(""multilingual embedding"" AND ""Vietnamese"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:11.868654+00:00,Semantic Scholar,"(""BGE-M3"" AND ""Vietnamese"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:11.869443+00:00,Semantic Scholar,"(""multilingual-e5"" AND ""Vietnamese"")",10,ok,True
+2026-05-24T14:15:19.992604+00:00,Semantic Scholar,"(""VN-MTEB"" OR ""Vietnamese Massive Text Embedding Benchmark"")",0,"failed: RetryError: HTTPSConnectionPool(host='api.semanticscholar.org', port=443): Max retries exceeded with url: /graph/v1/paper/search?que",False
+2026-05-24T14:15:19.997801+00:00,Semantic Scholar,"(""MTEB"" AND ""Vietnamese"" AND ""embedding"")",10,ok,True
+2026-05-24T14:15:28.446213+00:00,Semantic Scholar,"(""Vietnamese legal retrieval"" OR ""Vietnamese legal text retrieval"")",0,"failed: RetryError: HTTPSConnectionPool(host='api.semanticscholar.org', port=443): Max retries exceeded with url: /graph/v1/paper/search?que",False
+2026-05-24T14:15:28.449736+00:00,Semantic Scholar,"(""Vietnamese medical retrieval"" OR ""Vietnamese biomedical retrieval"")",10,ok,True
+2026-05-24T14:15:28.451563+00:00,Semantic Scholar,"(""Vietnamese news retrieval"")",10,ok,True
+2026-05-24T14:15:37.120840+00:00,Semantic Scholar,"(""Vietnamese history"" AND ""retrieval"" AND ""embedding"")",0,"failed: RetryError: HTTPSConnectionPool(host='api.semanticscholar.org', port=443): Max retries exceeded with url: /graph/v1/paper/search?que",False
+2026-05-24T14:15:37.124743+00:00,Semantic Scholar,"(""RAG"" AND ""Vietnamese"" AND ""embedding model"")",10,ok,True
+2026-05-24T14:15:37.128752+00:00,Crossref,"(""Vietnamese"" AND ""text embedding"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.130040+00:00,Crossref,"(""Vietnamese"" AND ""semantic search"" AND ""embedding"")",10,ok,True
+2026-05-24T14:15:37.130628+00:00,Crossref,"(""Vietnamese"" AND ""information retrieval"" AND ""neural retrieval"")",10,ok,True
+2026-05-24T14:15:37.131183+00:00,Crossref,"(""Vietnamese"" AND ""sentence embedding"" AND ""PhoBERT"")",10,ok,True
+2026-05-24T14:15:37.131782+00:00,Crossref,"(""Vietnamese"" AND ""SBERT"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.132271+00:00,Crossref,"(""multilingual embedding"" AND ""Vietnamese"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.132756+00:00,Crossref,"(""BGE-M3"" AND ""Vietnamese"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.133279+00:00,Crossref,"(""multilingual-e5"" AND ""Vietnamese"")",10,ok,True
+2026-05-24T14:15:37.134194+00:00,Crossref,"(""VN-MTEB"" OR ""Vietnamese Massive Text Embedding Benchmark"")",10,ok,True
+2026-05-24T14:15:37.134687+00:00,Crossref,"(""MTEB"" AND ""Vietnamese"" AND ""embedding"")",10,ok,True
+2026-05-24T14:15:37.135041+00:00,Crossref,"(""Vietnamese legal retrieval"" OR ""Vietnamese legal text retrieval"")",10,ok,True
+2026-05-24T14:15:37.135546+00:00,Crossref,"(""Vietnamese medical retrieval"" OR ""Vietnamese biomedical retrieval"")",10,ok,True
+2026-05-24T14:15:37.135963+00:00,Crossref,"(""Vietnamese news retrieval"")",10,ok,True
+2026-05-24T14:15:37.136359+00:00,Crossref,"(""Vietnamese history"" AND ""retrieval"" AND ""embedding"")",10,ok,True
+2026-05-24T14:15:37.136948+00:00,Crossref,"(""RAG"" AND ""Vietnamese"" AND ""embedding model"")",10,ok,True
+2026-05-24T14:15:37.140418+00:00,OpenAlex,"(""Vietnamese"" AND ""text embedding"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.143660+00:00,OpenAlex,"(""Vietnamese"" AND ""semantic search"" AND ""embedding"")",10,ok,True
+2026-05-24T14:15:37.146448+00:00,OpenAlex,"(""Vietnamese"" AND ""information retrieval"" AND ""neural retrieval"")",10,ok,True
+2026-05-24T14:15:37.148570+00:00,OpenAlex,"(""Vietnamese"" AND ""sentence embedding"" AND ""PhoBERT"")",10,ok,True
+2026-05-24T14:15:37.153676+00:00,OpenAlex,"(""Vietnamese"" AND ""SBERT"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.156818+00:00,OpenAlex,"(""multilingual embedding"" AND ""Vietnamese"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.158695+00:00,OpenAlex,"(""BGE-M3"" AND ""Vietnamese"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.160804+00:00,OpenAlex,"(""multilingual-e5"" AND ""Vietnamese"")",10,ok,True
+2026-05-24T14:15:37.162194+00:00,OpenAlex,"(""VN-MTEB"" OR ""Vietnamese Massive Text Embedding Benchmark"")",6,ok,True
+2026-05-24T14:15:37.164595+00:00,OpenAlex,"(""MTEB"" AND ""Vietnamese"" AND ""embedding"")",10,ok,True
+2026-05-24T14:15:37.167013+00:00,OpenAlex,"(""Vietnamese legal retrieval"" OR ""Vietnamese legal text retrieval"")",10,ok,True
+2026-05-24T14:15:37.170630+00:00,OpenAlex,"(""Vietnamese medical retrieval"" OR ""Vietnamese biomedical retrieval"")",10,ok,True
+2026-05-24T14:15:37.173359+00:00,OpenAlex,"(""Vietnamese news retrieval"")",10,ok,True
+2026-05-24T14:15:37.176583+00:00,OpenAlex,"(""Vietnamese history"" AND ""retrieval"" AND ""embedding"")",10,ok,True
+2026-05-24T14:15:37.179272+00:00,OpenAlex,"(""RAG"" AND ""Vietnamese"" AND ""embedding model"")",10,ok,True
+2026-05-24T14:15:37.181681+00:00,arXiv,"(""Vietnamese"" AND ""text embedding"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.182848+00:00,arXiv,"(""Vietnamese"" AND ""semantic search"" AND ""embedding"")",10,ok,True
+2026-05-24T14:15:37.183881+00:00,arXiv,"(""Vietnamese"" AND ""information retrieval"" AND ""neural retrieval"")",10,ok,True
+2026-05-24T14:15:37.185099+00:00,arXiv,"(""Vietnamese"" AND ""sentence embedding"" AND ""PhoBERT"")",10,ok,True
+2026-05-24T14:15:37.186001+00:00,arXiv,"(""Vietnamese"" AND ""SBERT"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.186958+00:00,arXiv,"(""multilingual embedding"" AND ""Vietnamese"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.188265+00:00,arXiv,"(""BGE-M3"" AND ""Vietnamese"" AND ""retrieval"")",10,ok,True
+2026-05-24T14:15:37.189674+00:00,arXiv,"(""multilingual-e5"" AND ""Vietnamese"")",10,ok,True
+2026-05-24T14:15:37.190665+00:00,arXiv,"(""VN-MTEB"" OR ""Vietnamese Massive Text Embedding Benchmark"")",10,ok,True
+2026-05-24T14:15:37.191620+00:00,arXiv,"(""MTEB"" AND ""Vietnamese"" AND ""embedding"")",10,ok,True
+2026-05-24T14:15:37.192612+00:00,arXiv,"(""Vietnamese legal retrieval"" OR ""Vietnamese legal text retrieval"")",10,ok,True
+2026-05-24T14:15:37.193931+00:00,arXiv,"(""Vietnamese medical retrieval"" OR ""Vietnamese biomedical retrieval"")",10,ok,True
+2026-05-24T14:15:37.195588+00:00,arXiv,"(""Vietnamese news retrieval"")",10,ok,True
+2026-05-24T14:15:37.196563+00:00,arXiv,"(""Vietnamese history"" AND ""retrieval"" AND ""embedding"")",10,ok,True
+2026-05-24T14:15:37.197529+00:00,arXiv,"(""RAG"" AND ""Vietnamese"" AND ""embedding model"")",10,ok,True
+2026-05-24T14:15:37.198246+00:00,ACL Anthology,"(""Vietnamese"" AND ""text embedding"" AND ""retrieval"")",0,ok,True
+2026-05-24T14:15:37.198519+00:00,ACL Anthology,"(""Vietnamese"" AND ""semantic search"" AND ""embedding"")",0,ok,True
+2026-05-24T14:15:37.198907+00:00,ACL Anthology,"(""Vietnamese"" AND ""information retrieval"" AND ""neural retrieval"")",0,ok,True
+2026-05-24T14:15:37.199209+00:00,ACL Anthology,"(""Vietnamese"" AND ""sentence embedding"" AND ""PhoBERT"")",0,ok,True
+2026-05-24T14:15:37.199890+00:00,ACL Anthology,"(""Vietnamese"" AND ""SBERT"" AND ""retrieval"")",0,ok,True
+2026-05-24T14:15:37.200131+00:00,ACL Anthology,"(""multilingual embedding"" AND ""Vietnamese"" AND ""retrieval"")",0,ok,True
+2026-05-24T14:15:37.200378+00:00,ACL Anthology,"(""BGE-M3"" AND ""Vietnamese"" AND ""retrieval"")",0,ok,True
+2026-05-24T14:15:37.200624+00:00,ACL Anthology,"(""multilingual-e5"" AND ""Vietnamese"")",0,ok,True
+2026-05-24T14:15:37.200932+00:00,ACL Anthology,"(""VN-MTEB"" OR ""Vietnamese Massive Text Embedding Benchmark"")",0,ok,True
+2026-05-24T14:15:37.201993+00:00,ACL Anthology,"(""MTEB"" AND ""Vietnamese"" AND ""embedding"")",0,ok,True
+2026-05-24T14:15:37.202295+00:00,ACL Anthology,"(""Vietnamese legal retrieval"" OR ""Vietnamese legal text retrieval"")",0,ok,True
+2026-05-24T14:15:37.202572+00:00,ACL Anthology,"(""Vietnamese medical retrieval"" OR ""Vietnamese biomedical retrieval"")",0,ok,True
+2026-05-24T14:15:37.202833+00:00,ACL Anthology,"(""Vietnamese news retrieval"")",0,ok,True
+2026-05-24T14:15:37.203085+00:00,ACL Anthology,"(""Vietnamese history"" AND ""retrieval"" AND ""embedding"")",0,ok,True
+2026-05-24T14:15:37.203488+00:00,ACL Anthology,"(""RAG"" AND ""Vietnamese"" AND ""embedding model"")",0,ok,True
+2026-05-24T14:15:37.204558+00:00,OpenReview,"(""Vietnamese"" AND ""text embedding"" AND ""retrieval"")",4,ok,True
+2026-05-24T14:15:37.205400+00:00,OpenReview,"(""Vietnamese"" AND ""semantic search"" AND ""embedding"")",4,ok,True
+2026-05-24T14:15:37.206185+00:00,OpenReview,"(""Vietnamese"" AND ""information retrieval"" AND ""neural retrieval"")",9,ok,True
+2026-05-24T14:15:37.207224+00:00,OpenReview,"(""Vietnamese"" AND ""sentence embedding"" AND ""PhoBERT"")",8,ok,True
+2026-05-24T14:15:37.208374+00:00,OpenReview,"(""Vietnamese"" AND ""SBERT"" AND ""retrieval"")",5,ok,True
+2026-05-24T14:15:37.209163+00:00,OpenReview,"(""multilingual embedding"" AND ""Vietnamese"" AND ""retrieval"")",4,ok,True
+2026-05-24T14:15:37.209918+00:00,OpenReview,"(""BGE-M3"" AND ""Vietnamese"" AND ""retrieval"")",0,ok,True
+2026-05-24T14:15:37.210666+00:00,OpenReview,"(""multilingual-e5"" AND ""Vietnamese"")",4,ok,True
+2026-05-24T14:15:37.211414+00:00,OpenReview,"(""VN-MTEB"" OR ""Vietnamese Massive Text Embedding Benchmark"")",5,ok,True
+2026-05-24T14:15:37.212087+00:00,OpenReview,"(""MTEB"" AND ""Vietnamese"" AND ""embedding"")",3,ok,True
+2026-05-24T14:15:37.212833+00:00,OpenReview,"(""Vietnamese legal retrieval"" OR ""Vietnamese legal text retrieval"")",7,ok,True
+2026-05-24T14:15:37.213531+00:00,OpenReview,"(""Vietnamese medical retrieval"" OR ""Vietnamese biomedical retrieval"")",7,ok,True
+2026-05-24T14:15:37.214246+00:00,OpenReview,"(""Vietnamese news retrieval"")",7,ok,True
+2026-05-24T14:15:37.215124+00:00,OpenReview,"(""Vietnamese history"" AND ""retrieval"" AND ""embedding"")",4,ok,True
+2026-05-24T14:15:37.215971+00:00,OpenReview,"(""RAG"" AND ""Vietnamese"" AND ""embedding model"")",3,ok,True
+2026-05-24T14:15:37.796275+00:00,DBLP,"(""Vietnamese"" AND ""text embedding"" AND ""retrieval"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=Vietnamese+++++text+em",False
+2026-05-24T14:15:38.345712+00:00,DBLP,"(""Vietnamese"" AND ""semantic search"" AND ""embedding"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=Vietnamese+++++semanti",False
+2026-05-24T14:15:38.964669+00:00,DBLP,"(""Vietnamese"" AND ""information retrieval"" AND ""neural retrieval"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=Vietnamese+++++informa",False
+2026-05-24T14:15:39.438474+00:00,DBLP,"(""Vietnamese"" AND ""sentence embedding"" AND ""PhoBERT"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=Vietnamese+++++sentenc",False
+2026-05-24T14:15:40.149959+00:00,DBLP,"(""Vietnamese"" AND ""SBERT"" AND ""retrieval"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=Vietnamese+++++SBERT++",False
+2026-05-24T14:15:40.763796+00:00,DBLP,"(""multilingual embedding"" AND ""Vietnamese"" AND ""retrieval"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=multilingual+embedding",False
+2026-05-24T14:15:41.315110+00:00,DBLP,"(""BGE-M3"" AND ""Vietnamese"" AND ""retrieval"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=BGE-M3+++++Vietnamese+",False
+2026-05-24T14:15:41.797224+00:00,DBLP,"(""multilingual-e5"" AND ""Vietnamese"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=multilingual-e5+++++Vi",False
+2026-05-24T14:15:42.296759+00:00,DBLP,"(""VN-MTEB"" OR ""Vietnamese Massive Text Embedding Benchmark"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=VN-MTEB+++++Vietnamese",False
+2026-05-24T14:15:43.024789+00:00,DBLP,"(""MTEB"" AND ""Vietnamese"" AND ""embedding"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=MTEB+++++Vietnamese+++",False
+2026-05-24T14:15:43.528890+00:00,DBLP,"(""Vietnamese legal retrieval"" OR ""Vietnamese legal text retrieval"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=Vietnamese+legal+retri",False
+2026-05-24T14:15:44.079750+00:00,DBLP,"(""Vietnamese medical retrieval"" OR ""Vietnamese biomedical retrieval"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=Vietnamese+medical+ret",False
+2026-05-24T14:15:44.542067+00:00,DBLP,"(""Vietnamese news retrieval"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=Vietnamese+news+retrie",False
+2026-05-24T14:15:45.269176+00:00,DBLP,"(""Vietnamese history"" AND ""retrieval"" AND ""embedding"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=Vietnamese+history++++",False
+2026-05-24T14:15:45.883966+00:00,DBLP,"(""RAG"" AND ""Vietnamese"" AND ""embedding model"")",0,"failed: ConnectionError: HTTPSConnectionPool(host='dblp.org', port=443): Max retries exceeded with url: /search/publ/api?q=RAG+++++Vietnamese++++",False
+2026-05-24T14:15:45.886541+00:00,Hugging Face model cards,BGE-M3,10,ok,True
+2026-05-24T14:15:45.887621+00:00,Hugging Face model cards,multilingual-e5,10,ok,True
+2026-05-24T14:15:45.888292+00:00,Hugging Face model cards,Vietnamese embedding,10,ok,True
+2026-05-24T14:15:45.888712+00:00,Hugging Face model cards,PhoBERT sentence embedding,0,ok,True

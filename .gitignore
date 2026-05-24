@@ -9,6 +9,7 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
+.lit-venv/
 
 # Node / frontend
 node_modules/
@@ -23,6 +24,12 @@ backend-spring/target/
 /logs/
 **/logs/
 *.log
+**/.graph/
+**/storage/graph/
+
+# Literature-review reproducible downloads/cache
+/cache/
+/papers/pdf/
 
 # Local tools
 .tools/
